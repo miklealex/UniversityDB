@@ -19,6 +19,14 @@ namespace UI
             InitializeComponent();
 
             comboBox.Items.AddRange(types.ToArray());
+
+            foreach (string obj in types)
+            {
+                ListViewItem lvi = new ListViewItem();
+                lvi.Text = obj;
+                listView1.Items.Add(lvi);
+            }
+            
         }
 
         private void btnOk_Click(object sender, EventArgs e)

@@ -366,12 +366,10 @@ namespace UI
 
         private void Delete(int id)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want delete the object?", 
-                "Delete object", MessageBoxButtons.YesNo);
+            
 
             string type = repo.GetUniversityById(id).ClassName;
-            if (result == DialogResult.Yes)
-            {
+
                 switch (type)
                 {
                     case "University":
@@ -400,8 +398,6 @@ namespace UI
                         throw new ArgumentException();
                 }
 
-                tree.SelectedNode.Remove();
-            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -450,22 +446,30 @@ namespace UI
             }
         }
 
+        private void RecurseDel(TreeNode root)
+        {
+            foreach(TreeNode node in root.Nodes)
+            {
+                RecurseDel(node);
+            }
+            Delete(((NodeInfo)root.Tag).Id);
+            tree.Nodes.Remove(root);
+        }
         private void OnButtonDelete(object sender, EventArgs e)
         {
             if (tree.SelectedNode != null)
             {
-                TreeNodeCollection children = tree.SelectedNode.Nodes;
-                NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
-                Delete(info.Id);
-                foreach (TreeNode node in children)
+                DialogResult result = MessageBox.Show("Are you sure you want delete the object?",
+                "Delete object", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
-                    tree.Nodes.Add(node);
-                }
-                if(tree.Nodes.Count == 0)
-                {
+                   RecurseDel(tree.SelectedNode);
+                   if (tree.Nodes.Count == 0)
+                   {
                     button1.Enabled = false;
                     button2.Enabled = false;
                     button3.Enabled = false;
+                   }
                 }
             }
         }
