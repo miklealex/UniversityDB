@@ -26,11 +26,11 @@ namespace UI
 
             TypesOfClassHierarhy = repo.GetClassesNames();
 
-            MenuItem details = new MenuItem("Details", btnDetails_Click);
-            MenuItem create = new MenuItem("Create", btnCreate_Click);
-            MenuItem edit = new MenuItem("Edit", btnEdit_Click);
-            MenuItem delete = new MenuItem("Delete", btnDelete_Click);
-            contextMenu = new ContextMenu(new MenuItem[] { create, details, edit, delete });
+            MenuItem details = new MenuItem("Info", OnButtonDetails);
+            MenuItem create = new MenuItem("New", OnButtonCreate);
+            MenuItem edit = new MenuItem("Edit", OnButtonEdit);
+            MenuItem delete = new MenuItem("Delete", OnButtonDelete);
+            contextMenu = new ContextMenu(new MenuItem[] { create, edit, delete, details });
 
             InitializeTree();
         }
@@ -385,7 +385,7 @@ namespace UI
             }
         }
 
-        private void btnCreate_Click(object sender, EventArgs e)
+        private void OnButtonCreate(object sender, EventArgs e)
         {
             NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
             string type = repo.GetUniversityById(info.Id).ClassName;
@@ -398,19 +398,19 @@ namespace UI
             }
         }
 
-        private void btnDetails_Click(object sender, EventArgs e)
+        private void OnButtonDetails(object sender, EventArgs e)
         {
             NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
             ShowDetails(info.Id);
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void OnButtonEdit(object sender, EventArgs e)
         {
             NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
             Edit(info.Id);
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void OnButtonDelete(object sender, EventArgs e)
         {
             TreeNodeCollection children = tree.SelectedNode.Nodes;
             NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
