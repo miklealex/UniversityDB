@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ObjectApproach", "ObjectApproach\ObjectApproach.shproj", "{2E68BBE4-F89B-42E7-8596-8793A5DE0747}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{B8705F2D-6754-4364-A8DC-1A44AAD3E093}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{A4F9039B-5B1D-4641-A6E2-AB1686AD3532}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		ObjectApproach\ObjectApproach.projitems*{2e68bbe4-f89b-42e7-8596-8793a5de0747}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8705F2D-6754-4364-A8DC-1A44AAD3E093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8705F2D-6754-4364-A8DC-1A44AAD3E093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8705F2D-6754-4364-A8DC-1A44AAD3E093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8705F2D-6754-4364-A8DC-1A44AAD3E093}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4F9039B-5B1D-4641-A6E2-AB1686AD3532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4F9039B-5B1D-4641-A6E2-AB1686AD3532}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4F9039B-5B1D-4641-A6E2-AB1686AD3532}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4F9039B-5B1D-4641-A6E2-AB1686AD3532}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,17 @@
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\UI\bin\Release\UI.exe.config
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\UI\bin\Release\UI.exe
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\UI\bin\Release\UI.pdb
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\UI\bin\Release\Database.dll
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\UI\bin\Release\EntityFramework.dll
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\UI\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\UI\bin\Release\Database.pdb
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\UI\bin\Release\Database.dll.config
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\UI\bin\Release\EntityFramework.xml
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\UI\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\UI\obj\Release\UI.csprojResolveAssemblyReference.cache
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\UI\obj\Release\UI.Forms.Read.ReadUObject.resources
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\UI\obj\Release\UI.MainWindow.resources
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\UI\obj\Release\UI.Properties.Resources.resources
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\UI\obj\Release\UI.csproj.GenerateResource.Cache
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\UI\obj\Release\UI.exe
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\UI\obj\Release\UI.pdb

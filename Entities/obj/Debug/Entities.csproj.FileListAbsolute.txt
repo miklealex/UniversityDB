@@ -1,0 +1,4 @@
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\Entities\bin\Debug\Entities.dll
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\Entities\bin\Debug\Entities.pdb
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\Entities\obj\Debug\Entities.dll
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\Entities\obj\Debug\Entities.pdb

@@ -1,0 +1,9 @@
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\Database\bin\Release\Database.dll.config
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\Database\bin\Release\Database.dll
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\Database\bin\Release\Database.pdb
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\Database\bin\Release\EntityFramework.dll
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\Database\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\Database\bin\Release\EntityFramework.xml
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\Database\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\Database\obj\Release\Database.dll
+C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\Database\obj\Release\Database.pdb
