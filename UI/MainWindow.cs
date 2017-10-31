@@ -73,6 +73,20 @@ namespace UI
                     node2.Tag = new NodeInfo { Id = uobj2.Id, Expanded = false };
                 }
             }
+            if(tree.SelectedNode != null)
+            {
+                button1.Enabled = true;
+                button2.Enabled = true;
+                button3.Enabled = true;
+                if(tree.SelectedNode.Parent == null)
+                {
+                    button4.Enabled = true;
+                }
+                else
+                {
+                    button4.Enabled = false;
+                }
+            }
         }
 
         private void tree_BeforeExpand(object sender, TreeViewCancelEventArgs e)
@@ -103,6 +117,20 @@ namespace UI
             if (e.Button == MouseButtons.Right && tree.SelectedNode != null)
             {
                 contextMenu.Show(tree, e.Location);
+            }
+            if (e.Button == MouseButtons.Left)
+            {
+                button1.Enabled = true;
+                button2.Enabled = true;
+                button3.Enabled = true;
+                if(tree.SelectedNode.Parent == null)
+                {
+                    button4.Enabled = true;
+                }
+                else
+                {
+                    button4.Enabled = false;
+                }
             }
         }
 
@@ -378,11 +406,17 @@ namespace UI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if(tree.Nodes.Count > 0)
+            {
+                OnButtonCreate(sender, e);
+                return;
+            }
             СhooseEntity window = new СhooseEntity(GetTypesOfClassHierarhy("root"));
             if (window.ShowDialog() == DialogResult.OK)
             {
                 Create(window.SelectedType, null);
             }
+        
         }
 
         private void OnButtonCreate(object sender, EventArgs e)
@@ -400,24 +434,39 @@ namespace UI
 
         private void OnButtonDetails(object sender, EventArgs e)
         {
-            NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
-            ShowDetails(info.Id);
+            if (tree.SelectedNode != null)
+            {
+                NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
+                ShowDetails(info.Id);
+            }
         }
 
         private void OnButtonEdit(object sender, EventArgs e)
         {
-            NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
-            Edit(info.Id);
+            if (tree.SelectedNode != null)
+            {
+                NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
+                Edit(info.Id);
+            }
         }
 
         private void OnButtonDelete(object sender, EventArgs e)
         {
-            TreeNodeCollection children = tree.SelectedNode.Nodes;
-            NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
-            Delete(info.Id);
-            foreach (TreeNode node in children)
+            if (tree.SelectedNode != null)
             {
-                tree.Nodes.Add(node);
+                TreeNodeCollection children = tree.SelectedNode.Nodes;
+                NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
+                Delete(info.Id);
+                foreach (TreeNode node in children)
+                {
+                    tree.Nodes.Add(node);
+                }
+                if(tree.Nodes.Count == 0)
+                {
+                    button1.Enabled = false;
+                    button2.Enabled = false;
+                    button3.Enabled = false;
+                }
             }
         }
 
@@ -442,6 +491,15 @@ namespace UI
         private void button3_Click(object sender, EventArgs e)
         {
             OnButtonDelete(sender, e);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            СhooseEntity window = new СhooseEntity(GetTypesOfClassHierarhy("root"));
+            if (window.ShowDialog() == DialogResult.OK)
+            {
+                Create(window.SelectedType, null);
+            }
         }
     }
 }
