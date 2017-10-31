@@ -1,6 +1,6 @@
 ﻿namespace UI.Forms.Read
 {
-    partial class ReadUObject
+    partial class ReadUniversity
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.pageForUObject = new System.Windows.Forms.TabPage();
+            this.pageForUniversity = new System.Windows.Forms.TabPage();
             this.linkLblForMajor = new System.Windows.Forms.LinkLabel();
             this.label5 = new System.Windows.Forms.Label();
             this.lblForLastWriteTime = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
-            this.pageForUObject.SuspendLayout();
+            this.pageForUniversity.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -50,32 +50,32 @@
             this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl.Controls.Add(this.pageForUObject);
+            this.tabControl.Controls.Add(this.pageForUniversity);
             this.tabControl.Location = new System.Drawing.Point(12, 12);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(388, 171);
             this.tabControl.TabIndex = 1;
             // 
-            // pageForUObject
+            // pageForUniversity
             // 
-            this.pageForUObject.Controls.Add(this.linkLblForMajor);
-            this.pageForUObject.Controls.Add(this.label5);
-            this.pageForUObject.Controls.Add(this.lblForLastWriteTime);
-            this.pageForUObject.Controls.Add(this.lblForCreationTime);
-            this.pageForUObject.Controls.Add(this.lblForId);
-            this.pageForUObject.Controls.Add(this.lblForTitle);
-            this.pageForUObject.Controls.Add(this.label4);
-            this.pageForUObject.Controls.Add(this.label3);
-            this.pageForUObject.Controls.Add(this.label2);
-            this.pageForUObject.Controls.Add(this.label1);
-            this.pageForUObject.Location = new System.Drawing.Point(4, 22);
-            this.pageForUObject.Name = "pageForUObject";
-            this.pageForUObject.Padding = new System.Windows.Forms.Padding(3);
-            this.pageForUObject.Size = new System.Drawing.Size(380, 145);
-            this.pageForUObject.TabIndex = 0;
-            this.pageForUObject.Text = "UObject";
-            this.pageForUObject.UseVisualStyleBackColor = true;
+            this.pageForUniversity.Controls.Add(this.linkLblForMajor);
+            this.pageForUniversity.Controls.Add(this.label5);
+            this.pageForUniversity.Controls.Add(this.lblForLastWriteTime);
+            this.pageForUniversity.Controls.Add(this.lblForCreationTime);
+            this.pageForUniversity.Controls.Add(this.lblForId);
+            this.pageForUniversity.Controls.Add(this.lblForTitle);
+            this.pageForUniversity.Controls.Add(this.label4);
+            this.pageForUniversity.Controls.Add(this.label3);
+            this.pageForUniversity.Controls.Add(this.label2);
+            this.pageForUniversity.Controls.Add(this.label1);
+            this.pageForUniversity.Location = new System.Drawing.Point(4, 22);
+            this.pageForUniversity.Name = "pageForUniversity";
+            this.pageForUniversity.Padding = new System.Windows.Forms.Padding(3);
+            this.pageForUniversity.Size = new System.Drawing.Size(380, 145);
+            this.pageForUniversity.TabIndex = 0;
+            this.pageForUniversity.Text = "University";
+            this.pageForUniversity.UseVisualStyleBackColor = true;
             // 
             // linkLblForMajor
             // 
@@ -190,7 +190,7 @@
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
-            // ReadUObject
+            // ReadUniversity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -198,17 +198,17 @@
             this.ClientSize = new System.Drawing.Size(412, 224);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.tabControl);
-            this.Name = "ReadUObject";
+            this.Name = "ReadUniversity";
             this.Text = "University object";
             this.tabControl.ResumeLayout(false);
-            this.pageForUObject.ResumeLayout(false);
-            this.pageForUObject.PerformLayout();
+            this.pageForUniversity.ResumeLayout(false);
+            this.pageForUniversity.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        protected System.Windows.Forms.TabPage pageForUObject;
+        protected System.Windows.Forms.TabPage pageForUniversity;
         protected System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

@@ -8,23 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using Database.Entities;
+using Database.ClassHierarhy;
 
 namespace UI.Forms.CreateEdit
 {
-    public partial class CreateEditUObject : Form
+    public partial class CreateEditUniversity : Form
     {
-        public UObject Value;
+        public University Value;
 
-        public CreateEditUObject()
+        public CreateEditUniversity()
         {
             InitializeComponent();
             AddEvents();
 
-            Text = "Create UObject";
+            Text = "Create University";
         }
 
-        public CreateEditUObject(UObject uobj)
+        public CreateEditUniversity(University uobj)
         {
             InitializeComponent();
 
@@ -32,13 +32,13 @@ namespace UI.Forms.CreateEdit
             ShowInfo();
 
             AddEvents();
-            Text = "Edit UObject";
+            Text = "Edit University";
             btnOk.Enabled = true;
         }
 
         private void AddEvents()
         {
-            // UObject
+            // University
             txtForTitle.TextChanged += SomethingChanged;
 
             // btnOk
@@ -68,7 +68,7 @@ namespace UI.Forms.CreateEdit
         {
             if (Value == null)
             {
-                Value = new UObject();
+                Value = new University();
             }
 
             FillObject(Value);
@@ -81,7 +81,7 @@ namespace UI.Forms.CreateEdit
             txtForTitle.Text = Value.Title;
         }
 
-        protected void FillObject(UObject uObj)
+        protected void FillObject(University uObj)
         {
             uObj.Title = txtForTitle.Text;
         }

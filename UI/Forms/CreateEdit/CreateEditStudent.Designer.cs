@@ -34,7 +34,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
-            this.pageForUObject.SuspendLayout();
+            this.pageForUniversity.SuspendLayout();
             this.pageForStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownForCourse)).BeginInit();
             this.SuspendLayout();
@@ -43,7 +43,7 @@
             // 
             this.tabControl.Controls.Add(this.pageForStudent);
             this.tabControl.Controls.SetChildIndex(this.pageForStudent, 0);
-            this.tabControl.Controls.SetChildIndex(this.pageForUObject, 0);
+            this.tabControl.Controls.SetChildIndex(this.pageForUniversity, 0);
             // 
             // pageForStudent
             // 
@@ -117,8 +117,8 @@
             this.Name = "CreateEditStudent";
             this.Text = "CreateEditStudent";
             this.tabControl.ResumeLayout(false);
-            this.pageForUObject.ResumeLayout(false);
-            this.pageForUObject.PerformLayout();
+            this.pageForUniversity.ResumeLayout(false);
+            this.pageForUniversity.PerformLayout();
             this.pageForStudent.ResumeLayout(false);
             this.pageForStudent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownForCourse)).EndInit();

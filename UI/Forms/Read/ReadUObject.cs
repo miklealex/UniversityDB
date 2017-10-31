@@ -7,39 +7,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Database.Entities;
+using Database.ClassHierarhy;
 using Database.Repository;
 namespace UI.Forms.Read
 {
-    public partial class ReadUObject : Form
+    public partial class ReadUniversity : Form
     {
-        private UObject UObject;
+        private University University;
 
         protected URepository repo;
 
-        public ReadUObject(UObject uobj)
+        public ReadUniversity(University uobj)
         {
             repo = new URepository();
             InitializeComponent();
-            UObject = uobj;
+            University = uobj;
             ShowInfo();
         }
 
-        protected ReadUObject()
+        protected ReadUniversity()
         {
             InitializeComponent();
         }
 
         private void ShowInfo()
         {
-            lblForTitle.Text = UObject.Title;
-            lblForId.Text = UObject.Id.ToString();
-            lblForCreationTime.Text = UObject.CreationTime.ToString();
-            lblForLastWriteTime.Text = UObject.LastWriteTime.ToString();
+            lblForTitle.Text = University.Title;
+            lblForId.Text = University.Id.ToString();
+            lblForCreationTime.Text = University.CreationTime.ToString();
+            lblForLastWriteTime.Text = University.LastWriteTime.ToString();
 
-            if (UObject.MajorId != null)
+            if (University.ParentId != null)
             {
-                UObject major = repo.GetUObjectById((int)UObject.MajorId);
+                University major = repo.GetUniversityById((int)University.ParentId);
                 linkLblForMajor.Text = major.Title;
             }
             else
@@ -55,19 +55,19 @@ namespace UI.Forms.Read
 
         private void linkLblForMajor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            int id = (int)UObject.MajorId;
+            int id = (int)University.ParentId;
             ShowDetails(id);
         }
 
         protected void ShowDetails(int id)
         {
-            string type = repo.GetUObjectById(id).ClassName;
+            string type = repo.GetUniversityById(id).ClassName;
 
-            ReadUObject detailsWindow = null;
+            ReadUniversity detailsWindow = null;
             switch (type)
             {
-                case "UObject":
-                    detailsWindow = new ReadUObject(repo.GetUObjectById(id));
+                case "University":
+                    detailsWindow = new ReadUniversity(repo.GetUniversityById(id));
                     break;
                 case "Person":
                     detailsWindow = new ReadPerson(repo.GetPersonById(id));

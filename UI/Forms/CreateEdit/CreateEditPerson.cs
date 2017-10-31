@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using Database.Entities;
+using Database.ClassHierarhy;
 
 namespace UI.Forms.CreateEdit
 {
-    public partial class CreateEditPerson : UI.Forms.CreateEdit.CreateEditUObject
+    public partial class CreateEditPerson : UI.Forms.CreateEdit.CreateEditUniversity
     {
         public new Person Value;
 

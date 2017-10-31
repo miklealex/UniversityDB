@@ -42,16 +42,16 @@
             this.pageForPerson.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pageForUObject
+            // pageForUniversity
             // 
-            this.pageForUObject.Size = new System.Drawing.Size(376, 147);
+            this.pageForUniversity.Size = new System.Drawing.Size(376, 147);
             // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.pageForPerson);
             this.tabControl.Size = new System.Drawing.Size(384, 173);
             this.tabControl.Controls.SetChildIndex(this.pageForPerson, 0);
-            this.tabControl.Controls.SetChildIndex(this.pageForUObject, 0);
+            this.tabControl.Controls.SetChildIndex(this.pageForUniversity, 0);
             // 
             // btnOk
             // 

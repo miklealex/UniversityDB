@@ -43,7 +43,7 @@
             this.tabControl.Controls.SetChildIndex(this.pageForForeignStudent, 0);
             this.tabControl.Controls.SetChildIndex(this.pageForStudent, 0);
             this.tabControl.Controls.SetChildIndex(this.pageForPerson, 0);
-            this.tabControl.Controls.SetChildIndex(this.pageForUObject, 0);
+            this.tabControl.Controls.SetChildIndex(this.pageForUniversity, 0);
             // 
             // pageForForeignStudent
             // 

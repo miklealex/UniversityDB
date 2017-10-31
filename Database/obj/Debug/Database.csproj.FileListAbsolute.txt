@@ -8,3 +8,14 @@ C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\Database
 C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\Database\obj\Debug\Database.dll
 C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\Database\obj\Debug\Database.pdb
 C:\Users\Volodymyr\Documents\Visual Studio 2017\Projects\ObjectApproach\Database\obj\Debug\Database.csprojResolveAssemblyReference.cache
+D:\VSprojects\UniversityDB\UniversityDB\Database\bin\Debug\Database.dll.config
+D:\VSprojects\UniversityDB\UniversityDB\Database\bin\Debug\Database.dll
+D:\VSprojects\UniversityDB\UniversityDB\Database\bin\Debug\Database.pdb
+D:\VSprojects\UniversityDB\UniversityDB\Database\bin\Debug\EntityFramework.dll
+D:\VSprojects\UniversityDB\UniversityDB\Database\bin\Debug\EntityFramework.SqlServer.dll
+D:\VSprojects\UniversityDB\UniversityDB\Database\bin\Debug\EntityFramework.xml
+D:\VSprojects\UniversityDB\UniversityDB\Database\bin\Debug\EntityFramework.SqlServer.xml
+D:\VSprojects\UniversityDB\UniversityDB\Database\obj\Debug\Database.csprojResolveAssemblyReference.cache
+D:\VSprojects\UniversityDB\UniversityDB\Database\obj\Debug\Database.csproj.CoreCompileInputs.cache
+D:\VSprojects\UniversityDB\UniversityDB\Database\obj\Debug\Database.dll
+D:\VSprojects\UniversityDB\UniversityDB\Database\obj\Debug\Database.pdb

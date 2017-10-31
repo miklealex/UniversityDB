@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Database.Entities;
+using Database.ClassHierarhy;
 using System.Data;
 
 namespace Database.Repository
@@ -15,55 +15,55 @@ namespace Database.Repository
             context = new UContext();
         }
 
-        #region UObjects => context.DBUObjects.Where(o => o.Sealed).ToList().Select(uobj => new UObject(uobj));
+        #region Universitys => context.DBUniversitys.Where(o => o.Sealed).ToList().Select(uobj => new University(uobj));
 
-        private IEnumerable<UObject> UObjects => context.DBUObjects
-            .Where(o => o.Class.Name == typeof(UObject).Name).ToList()
-            .Select(uobj => new UObject(uobj));
+        private IEnumerable<University> Universitys => context.DBUniversitys
+            .Where(o => o.Class.Name == typeof(University).Name).ToList()
+            .Select(uobj => new University(uobj));
 
         private IEnumerable<Person> People => context.DBPeople
-            .Where(o => o.DBUObject.Class.Name == typeof(Person).Name).ToList()
+            .Where(o => o.DBUniversity.Class.Name == typeof(Person).Name).ToList()
             .Select(person => new Person(person));
 
         private IEnumerable<Student> Students => context.DBStudents
-            .Where(o => o.DBUObject.Class.Name == typeof(Student).Name).ToList()
+            .Where(o => o.DBUniversity.Class.Name == typeof(Student).Name).ToList()
             .Select(student => new Student(student, context));
 
         private IEnumerable<Entrant> Entrants => context.DBEntrants
-            .Where(o => o.DBUObject.Class.Name == typeof(Entrant).Name).ToList()
+            .Where(o => o.DBUniversity.Class.Name == typeof(Entrant).Name).ToList()
             .Select(entrant => new Entrant(entrant, context));
 
         private IEnumerable<ForeignStudent> ForeignStudents => context.DBForeignStudents
-            .Where(o => o.DBUObject.Class.Name == typeof(ForeignStudent).Name).ToList()
+            .Where(o => o.DBUniversity.Class.Name == typeof(ForeignStudent).Name).ToList()
             .Select(student => new ForeignStudent(student, context));
 
         private IEnumerable<Worker> Workers => context.DBWorkers
-            .Where(o => o.DBUObject.Class.Name == typeof(Worker).Name).ToList()
+            .Where(o => o.DBUniversity.Class.Name == typeof(Worker).Name).ToList()
             .Select(worker => new Worker(worker, context));
 
         private IEnumerable<Teacher> Teachers => context.DBTeachers
-            .Where(o => o.DBUObject.Class.Name == typeof(Teacher).Name).ToList()
+            .Where(o => o.DBUniversity.Class.Name == typeof(Teacher).Name).ToList()
             .Select(teacher => new Teacher(teacher, context));
 
         #endregion
 
         #region Create. private methods
 
-        private int CreateUObject(UObject uobj, DBClass dbclass)
+        private int CreateUniversity(University uobj, DBClass dbclass)
         {
             uobj.CreationTime = DateTime.Now;
             uobj.LastWriteTime = DateTime.Now;
 
-            DBUObject dbUObj = new DBUObject
+            DBUniversity dbUObj = new DBUniversity
             {
                 CreationTime = uobj.CreationTime,
                 LastWriteTime = uobj.LastWriteTime,
-                MajorId = uobj.MajorId,
+                ParentId = uobj.ParentId,
                 Title = uobj.Title,
                 ClassId = dbclass.Id
             };
 
-            context.DBUObjects.Add(dbUObj);
+            context.DBUniversitys.Add(dbUObj);
             context.SaveChanges();
 
             uobj.Id = dbUObj.Id;
@@ -72,7 +72,7 @@ namespace Database.Repository
 
         private int CreatePerson(Person person, DBClass dbclass)
         {
-            int id = CreateUObject(person, dbclass);
+            int id = CreateUniversity(person, dbclass);
 
             DBPerson dbPerson = new DBPerson
             {
@@ -184,10 +184,10 @@ namespace Database.Repository
 
         #region Create
 
-        public int CreateUObject(UObject uobj)
+        public int CreateUniversity(University uobj)
         {
             string className = uobj.GetType().Name;
-            return CreateUObject(uobj, context.DBClasses
+            return CreateUniversity(uobj, context.DBClasses
                 .First(c => c.Name == className));
         }
 
@@ -237,10 +237,10 @@ namespace Database.Repository
 
         #region Read
 
-        public UObject GetUObjectById(int id)
+        public University GetUniversityById(int id)
         {
-            DBUObject dbUObj = context.DBUObjects.First(o => o.Id == id);
-            return new UObject(dbUObj);
+            DBUniversity dbUObj = context.DBUniversitys.First(o => o.Id == id);
+            return new University(dbUObj);
         }
 
         public Person GetPersonById(int id)
@@ -283,9 +283,9 @@ namespace Database.Repository
 
         #region Update
 
-        public void UpdateUObject(UObject uObj)
+        public void UpdateUniversity(University uObj)
         {
-            DBUObject dbUObj = context.DBUObjects.First(o => o.Id == uObj.Id);
+            DBUniversity dbUObj = context.DBUniversitys.First(o => o.Id == uObj.Id);
             dbUObj.Title = uObj.Title;
             dbUObj.LastWriteTime = DateTime.Now;
             context.SaveChanges();
@@ -300,7 +300,7 @@ namespace Database.Repository
             dbPerson.Birthday = person.Birthday;
             dbPerson.Gender = person.Gender;
 
-            UpdateUObject(person);
+            UpdateUniversity(person);
         }
 
         public void UpdateStudent(Student student)
@@ -356,11 +356,11 @@ namespace Database.Repository
 
         #region Delete
 
-        public void DeleteUObject(int id)
+        public void DeleteUniversity(int id)
         {
-            DBUObject forRemove = context.DBUObjects.First(o => o.Id == id);
+            DBUniversity forRemove = context.DBUniversitys.First(o => o.Id == id);
 
-            context.DBUObjects.Remove(forRemove);
+            context.DBUniversitys.Remove(forRemove);
 
             context.SaveChanges();
         }
@@ -371,7 +371,7 @@ namespace Database.Repository
 
             context.DBPeople.Remove(forRemove);
 
-            DeleteUObject(id);
+            DeleteUniversity(id);
         }
 
         public void DeleteStudent(int id)
@@ -421,52 +421,52 @@ namespace Database.Repository
 
         #endregion
 
-        #region GetUObjectsByMajor(int? major)
+        #region GetUniversitysByMajor(int? major)
 
-        public IEnumerable<UObject> GetUObjectsByMajor(int? major)
+        public IEnumerable<University> GetUniversitysByMajor(int? major)
         {
-            return UObjects.Where(o => o.MajorId == major);
+            return Universitys.Where(o => o.ParentId == major);
         }
 
         public IEnumerable<Person> GetPeopleByMajor(int? major)
         {
-            return People.Where(p => p.MajorId == major);
+            return People.Where(p => p.ParentId == major);
         }
 
         public IEnumerable<Student> GetStudentsByMajor(int? major)
         {
-            return Students.Where(s => s.MajorId == major);
+            return Students.Where(s => s.ParentId == major);
         }
 
         public IEnumerable<Entrant> GetEntrantsByMajor(int? major)
         {
-            return Entrants.Where(e => e.MajorId == major);
+            return Entrants.Where(e => e.ParentId == major);
         }
 
         public IEnumerable<ForeignStudent> GetForeignStudentsByMajor(int? major)
         {
-            return ForeignStudents.Where(fs => fs.MajorId == major);
+            return ForeignStudents.Where(fs => fs.ParentId == major);
         }
 
         public IEnumerable<Worker> GetWorkersByMajor(int? major)
         {
-            return Workers.Where(w => w.MajorId == major);
+            return Workers.Where(w => w.ParentId == major);
         }
 
         public IEnumerable<Teacher> GetTeachersByMajor(int? major)
         {
-            return Teachers.Where(t => t.MajorId == major);
+            return Teachers.Where(t => t.ParentId == major);
         }
 
-        public IEnumerable<UObject> GetAllObjectsByMajor(int? major)
+        public IEnumerable<University> GetAllObjectsByMajor(int? major)
         {
-            return context.DBUObjects.Where(o => o.MajorId == major).ToList().Select(o => new UObject(o));
+            return context.DBUniversitys.Where(o => o.ParentId == major).ToList().Select(o => new University(o));
         }
 
-        //public Dictionary<string, IEnumerable<UObject>> GetAllObjectsByMajor(int? major)
+        //public Dictionary<string, IEnumerable<University>> GetAllObjectsByMajor(int? major)
         //{
-        //    Dictionary<string, IEnumerable<UObject>> dictionary = new Dictionary<string, IEnumerable<UObject>>();
-        //    dictionary.Add("University Object", GetUObjectsByMajor(major));
+        //    Dictionary<string, IEnumerable<University>> dictionary = new Dictionary<string, IEnumerable<University>>();
+        //    dictionary.Add("University Object", GetUniversitysByMajor(major));
         //    dictionary.Add("Person", GetPeopleByMajor(major));
         //    dictionary.Add("Student", GetStudentsByMajor(major));
         //    dictionary.Add("Entrant", GetEntrantsByMajor(major));
@@ -477,9 +477,9 @@ namespace Database.Repository
         //    return dictionary;
         //}
 
-        //public IEnumerable<UObject> GetAllObjectsByMajor(int? major)
+        //public IEnumerable<University> GetAllObjectsByMajor(int? major)
         //{
-        //    return GetUObjectsByMajor(major)
+        //    return GetUniversitysByMajor(major)
         //        .Concat(GetPeopleByMajor(major))
         //        .Concat(GetStudentsByMajor(major))
         //        .Concat(GetEntrantsByMajor(major))

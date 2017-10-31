@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using Database.Entities;
+using Database.ClassHierarhy;
 
 namespace UI.Forms.Read
 {
-    public partial class ReadPerson : UI.Forms.Read.ReadUObject
+    public partial class ReadPerson : UI.Forms.Read.ReadUniversity
     {
         private Person Person;
 

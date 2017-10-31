@@ -24,15 +24,15 @@ namespace Database
         public virtual DBClass Parent { get; set; }
     }
 
-    public class DBUObject
+    public class DBUniversity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [ForeignKey("Major")]
-        public int? MajorId { get; set; }
-        public virtual DBUObject Major { get; set; }
+        public int? ParentId { get; set; }
+        public virtual DBUniversity Major { get; set; }
 
         public string Title { get; set; }
         public DateTime CreationTime { get; set; }
@@ -45,11 +45,11 @@ namespace Database
 
     public class DBPerson
     {
-        [Key, ForeignKey("DBUObject")]
+        [Key, ForeignKey("DBUniversity")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
-        public virtual DBUObject DBUObject { get; set; }
+        public virtual DBUniversity DBUniversity { get; set; }
 
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -59,11 +59,11 @@ namespace Database
 
     public class DBStudent
     {
-        [Key, ForeignKey("DBUObject")]
+        [Key, ForeignKey("DBUniversity")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
-        public virtual DBUObject DBUObject { get; set; }
+        public virtual DBUniversity DBUniversity { get; set; }
 
         public int Course { get; set; }
         public DateTime EntryDate { get; set; }
@@ -71,11 +71,11 @@ namespace Database
 
     public class DBEntrant
     {
-        [Key, ForeignKey("DBUObject")]
+        [Key, ForeignKey("DBUniversity")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
-        public virtual DBUObject DBUObject { get; set; }
+        public virtual DBUniversity DBUniversity { get; set; }
 
         public int IEE { get; set; }
         public double GPA { get; set; }
@@ -83,11 +83,11 @@ namespace Database
 
     public class DBForeignStudent
     {
-        [Key, ForeignKey("DBUObject")]
+        [Key, ForeignKey("DBUniversity")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
-        public virtual DBUObject DBUObject { get; set; }
+        public virtual DBUniversity DBUniversity { get; set; }
 
         public string Nationality { get; set; }
         public string University { get; set; }
@@ -95,11 +95,11 @@ namespace Database
 
     public class DBWorker
     {
-        [Key, ForeignKey("DBUObject")]
+        [Key, ForeignKey("DBUniversity")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
-        public virtual DBUObject DBUObject { get; set; }
+        public virtual DBUniversity DBUniversity { get; set; }
 
         public double Salary { get; set; }
         public DateTime EmploymentDate { get; set; }
@@ -107,11 +107,11 @@ namespace Database
 
     public class DBTeacher
     {
-        [Key, ForeignKey("DBUObject")]
+        [Key, ForeignKey("DBUniversity")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
-        public virtual DBUObject DBUObject { get; set; }
+        public virtual DBUniversity DBUniversity { get; set; }
 
         public string Position { get; set; }
     }

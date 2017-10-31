@@ -42,7 +42,7 @@
             this.tabControl.Controls.Add(this.pageForWorker);
             this.tabControl.Controls.SetChildIndex(this.pageForWorker, 0);
             this.tabControl.Controls.SetChildIndex(this.pageForPerson, 0);
-            this.tabControl.Controls.SetChildIndex(this.pageForUObject, 0);
+            this.tabControl.Controls.SetChildIndex(this.pageForUniversity, 0);
             // 
             // pageForWorker
             // 

@@ -4,33 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Database.Entities
+namespace Database.ClassHierarhy
 {
-    public class UObject
+    public class University
     {
         public int Id { get; set; }
-        public int? MajorId { get; set; }
+        public int? ParentId { get; set; }
         public string Title { get; set; }
         public DateTime CreationTime { get; set; }
         public DateTime LastWriteTime { get; set; }
         public string ClassName { get; set; }
-        public string MajorTitle { get; set; }
+        public string ParentTitle { get; set; }
 
-        public UObject() { }
+        public University() { }
 
-        public UObject(DBUObject dbUObj)
+        public University(DBUniversity dbUObj)
         {
             Id = dbUObj.Id;
-            MajorId = dbUObj.MajorId;
+            ParentId = dbUObj.ParentId;
             Title = dbUObj.Title;
             CreationTime = dbUObj.CreationTime;
             LastWriteTime = dbUObj.LastWriteTime;
             ClassName = dbUObj.Class.Name;
-            MajorTitle = dbUObj.Major == null ? "" : dbUObj.Major.Title;
+            ParentTitle = dbUObj.Major == null ? "" : dbUObj.Major.Title;
         }
     }
 
-    public class Person : UObject
+    public class Person : University
     {
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -40,7 +40,7 @@ namespace Database.Entities
         public Person() { }
 
         public Person(DBPerson dbPerson) 
-            : base(dbPerson.DBUObject)
+            : base(dbPerson.DBUniversity)
         {
             Name = dbPerson.Name;
             Surname = dbPerson.Surname;

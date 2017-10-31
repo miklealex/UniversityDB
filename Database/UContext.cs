@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 
-using Database.Entities;
+using Database.ClassHierarhy;
 using Database.Repository;
 namespace Database
 {
@@ -20,7 +20,7 @@ namespace Database
         {
         }
 
-        public virtual DbSet<DBUObject> DBUObjects { get; set; }
+        public virtual DbSet<DBUniversity> DBUniversitys { get; set; }
         public virtual DbSet<DBPerson> DBPeople { get; set; }
         public virtual DbSet<DBStudent> DBStudents { get; set; }
         public virtual DbSet<DBEntrant> DBEntrants { get; set; }
@@ -36,8 +36,8 @@ namespace Database
         {
             URepository repo = new URepository();
 
-            repo.CreateClass(typeof(UObject), null);
-            repo.CreateClass(typeof(Person), typeof(UObject));
+            repo.CreateClass(typeof(University), null);
+            repo.CreateClass(typeof(Person), typeof(University));
             repo.CreateClass(typeof(Student), typeof(Person));
             repo.CreateClass(typeof(ForeignStudent), typeof(Student));
             repo.CreateClass(typeof(Entrant), typeof(Person));

@@ -32,7 +32,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtForPosition = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
-            this.pageForUObject.SuspendLayout();
+            this.pageForUniversity.SuspendLayout();
             this.pageForTeacher.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +40,7 @@
             // 
             this.tabControl.Controls.Add(this.pageForTeacher);
             this.tabControl.Controls.SetChildIndex(this.pageForTeacher, 0);
-            this.tabControl.Controls.SetChildIndex(this.pageForUObject, 0);
+            this.tabControl.Controls.SetChildIndex(this.pageForUniversity, 0);
             // 
             // pageForTeacher
             // 
@@ -78,8 +78,8 @@
             this.Name = "CreateEditTeacher";
             this.Text = "CreateEditTeacher";
             this.tabControl.ResumeLayout(false);
-            this.pageForUObject.ResumeLayout(false);
-            this.pageForUObject.PerformLayout();
+            this.pageForUniversity.ResumeLayout(false);
+            this.pageForUniversity.PerformLayout();
             this.pageForTeacher.ResumeLayout(false);
             this.pageForTeacher.PerformLayout();
             this.ResumeLayout(false);

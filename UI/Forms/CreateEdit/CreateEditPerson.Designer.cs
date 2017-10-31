@@ -47,11 +47,11 @@
             this.tabControl.Controls.Add(this.pageForPerson);
             this.tabControl.Size = new System.Drawing.Size(402, 170);
             this.tabControl.Controls.SetChildIndex(this.pageForPerson, 0);
-            this.tabControl.Controls.SetChildIndex(this.pageForUObject, 0);
+            this.tabControl.Controls.SetChildIndex(this.pageForUniversity, 0);
             // 
-            // pageForUObject
+            // pageForUniversity
             // 
-            this.pageForUObject.Size = new System.Drawing.Size(394, 144);
+            this.pageForUniversity.Size = new System.Drawing.Size(394, 144);
             // 
             // btnCancel
             // 

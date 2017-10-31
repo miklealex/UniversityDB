@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Database.Entities;
+using Database.ClassHierarhy;
 using Database.Repository;
 using System.Reflection;
 
@@ -14,7 +14,7 @@ namespace UI
     {
         private URepository repo;
 
-        private List<string> TypesOfEntities;
+        private List<string> TypesOfClassHierarhy;
 
         private ContextMenu contextMenu;
 
@@ -24,7 +24,7 @@ namespace UI
 
             InitializeComponent();
 
-            TypesOfEntities = repo.GetClassesNames();
+            TypesOfClassHierarhy = repo.GetClassesNames();
 
             MenuItem details = new MenuItem("Details", btnDetails_Click);
             MenuItem create = new MenuItem("Create", btnCreate_Click);
@@ -35,26 +35,26 @@ namespace UI
             InitializeTree();
         }
 
-        private List<string> GetTypesOfEntities(string parentType)
+        private List<string> GetTypesOfClassHierarhy(string parentType)
         {
             switch(parentType)
             {
-                case "UObject":
-                    return TypesOfEntities;
+                case "University":
+                    return TypesOfClassHierarhy;
                 case "Person":
-                    return TypesOfEntities;
+                    return TypesOfClassHierarhy;
                 case "Student":
-                    return TypesOfEntities;
+                    return TypesOfClassHierarhy;
                 case "ForeignStudent":
-                    return TypesOfEntities;
+                    return TypesOfClassHierarhy;
                 case "Entrant":
-                    return TypesOfEntities;
+                    return TypesOfClassHierarhy;
                 case "Worker":
-                    return TypesOfEntities;
+                    return TypesOfClassHierarhy;
                 case "Teacher":
-                    return TypesOfEntities;
+                    return TypesOfClassHierarhy;
                 case "root":
-                    return TypesOfEntities;
+                    return TypesOfClassHierarhy;
                 default:
                     return null;
             }
@@ -62,12 +62,12 @@ namespace UI
 
         private void InitializeTree()
         {
-            foreach(UObject uobj in repo.GetAllObjectsByMajor(null))
+            foreach(University uobj in repo.GetAllObjectsByMajor(null))
             {
                 TreeNode node = tree.Nodes.Add(uobj.Title);
                 node.Tag = new NodeInfo { Id = uobj.Id, Expanded = false };
 
-                foreach (UObject uobj2 in repo.GetAllObjectsByMajor(uobj.Id))
+                foreach (University uobj2 in repo.GetAllObjectsByMajor(uobj.Id))
                 {
                     TreeNode node2 = node.Nodes.Add(uobj2.Title);
                     node2.Tag = new NodeInfo { Id = uobj2.Id, Expanded = false };
@@ -83,7 +83,7 @@ namespace UI
                 foreach (TreeNode node2 in e.Node.Nodes)
                 {
                     NodeInfo info2 = (NodeInfo)node2.Tag;
-                    foreach (UObject uobj in repo.GetAllObjectsByMajor(info2.Id))
+                    foreach (University uobj in repo.GetAllObjectsByMajor(info2.Id))
                     {
                         TreeNode node3 = node2.Nodes.Add(uobj.Title);
                         node3.Tag = new NodeInfo { Id = uobj.Id, Expanded = false };
@@ -112,18 +112,18 @@ namespace UI
         {
             int id = 0;
             string title = "";
-            int? majorId = parent == null
+            int? ParentId = parent == null
                 ? null
                 : (int?)((NodeInfo)parent.Tag).Id;
 
             switch (type)
             {
-                case "UObject":
-                    CreateEditUObject uObjWindow = new CreateEditUObject();
+                case "University":
+                    CreateEditUniversity uObjWindow = new CreateEditUniversity();
                     if (uObjWindow.ShowDialog() == DialogResult.OK)
                     {
-                        uObjWindow.Value.MajorId = majorId;
-                        repo.CreateUObject(uObjWindow.Value);
+                        uObjWindow.Value.ParentId = ParentId;
+                        repo.CreateUniversity(uObjWindow.Value);
                         id = uObjWindow.Value.Id;
                         title = uObjWindow.Value.Title;
                     }
@@ -132,7 +132,7 @@ namespace UI
                     CreateEditPerson personWindow = new CreateEditPerson();
                     if (personWindow.ShowDialog() == DialogResult.OK)
                     {
-                        personWindow.Value.MajorId = majorId;
+                        personWindow.Value.ParentId = ParentId;
                         repo.CreatePerson(personWindow.Value);
                         id = personWindow.Value.Id;
                         title = personWindow.Value.Title;
@@ -142,7 +142,7 @@ namespace UI
                     CreateEditWorker workerWindow = new CreateEditWorker();
                     if (workerWindow.ShowDialog() == DialogResult.OK)
                     {
-                        workerWindow.Value.MajorId = majorId;
+                        workerWindow.Value.ParentId = ParentId;
                         repo.CreateWorker(workerWindow.Value);
                         id = workerWindow.Value.Id;
                         title = workerWindow.Value.Title;
@@ -152,7 +152,7 @@ namespace UI
                     CreateEditTeacher teacherWindow = new CreateEditTeacher();
                     if (teacherWindow.ShowDialog() == DialogResult.OK)
                     {
-                        teacherWindow.Value.MajorId = majorId;
+                        teacherWindow.Value.ParentId = ParentId;
                         repo.CreateTeacher(teacherWindow.Value);
                         id = teacherWindow.Value.Id;
                         title = teacherWindow.Value.Title;
@@ -162,7 +162,7 @@ namespace UI
                     CreateEditEntrant entrantWindow = new CreateEditEntrant();
                     if (entrantWindow.ShowDialog() == DialogResult.OK)
                     {
-                        entrantWindow.Value.MajorId = majorId;
+                        entrantWindow.Value.ParentId = ParentId;
                         repo.CreateEntrant(entrantWindow.Value);
                         id = entrantWindow.Value.Id;
                         title = entrantWindow.Value.Title;
@@ -172,7 +172,7 @@ namespace UI
                     CreateEditStudent studentWidnow = new CreateEditStudent();
                     if (studentWidnow.ShowDialog() == DialogResult.OK)
                     {
-                        studentWidnow.Value.MajorId = majorId;
+                        studentWidnow.Value.ParentId = ParentId;
                         repo.CreateStudent(studentWidnow.Value);
                         id = studentWidnow.Value.Id;
                         title = studentWidnow.Value.Title;
@@ -182,7 +182,7 @@ namespace UI
                     CreateEditForeignStudent foreignStudentWindow = new CreateEditForeignStudent();
                     if (foreignStudentWindow.ShowDialog() == DialogResult.OK)
                     {
-                        foreignStudentWindow.Value.MajorId = majorId;
+                        foreignStudentWindow.Value.ParentId = ParentId;
                         repo.CreateForeignStudent(foreignStudentWindow.Value);
                         id = foreignStudentWindow.Value.Id;
                         title = foreignStudentWindow.Value.Title;
@@ -204,13 +204,13 @@ namespace UI
 
         private void ShowDetails(int id)
         {
-            string type = repo.GetUObjectById(id).ClassName;
+            string type = repo.GetUniversityById(id).ClassName;
 
-            ReadUObject detailsWindow = null;
+            ReadUniversity detailsWindow = null;
             switch (type)
             {
-                case "UObject":
-                    detailsWindow = new ReadUObject(repo.GetUObjectById(id));
+                case "University":
+                    detailsWindow = new ReadUniversity(repo.GetUniversityById(id));
                     break;
                 case "Person":
                     detailsWindow = new ReadPerson(repo.GetPersonById(id));
@@ -237,8 +237,8 @@ namespace UI
             detailsWindow.ShowDialog();
             //switch (type)
             //{
-            //    case "UObject":
-            //        ReadUObject uObjWnd = new ReadUObject(repo.GetUObjectById(id));
+            //    case "University":
+            //        ReadUniversity uObjWnd = new ReadUniversity(repo.GetUniversityById(id));
             //        uObjWnd.ShowDialog();
             //        break;
             //    case "Person":
@@ -272,14 +272,14 @@ namespace UI
 
         private void Edit(int id)
         {
-            string type = repo.GetUObjectById(id).ClassName;
+            string type = repo.GetUniversityById(id).ClassName;
             switch (type)
             {
-                case "UObject":
-                    CreateEditUObject uObjWindow = new CreateEditUObject(repo.GetUObjectById(id));
+                case "University":
+                    CreateEditUniversity uObjWindow = new CreateEditUniversity(repo.GetUniversityById(id));
                     if (uObjWindow.ShowDialog() == DialogResult.OK)
                     {
-                        repo.UpdateUObject(uObjWindow.Value);
+                        repo.UpdateUniversity(uObjWindow.Value);
                         tree.SelectedNode.Text = uObjWindow.Value.Title;
                     }
                     break;
@@ -341,13 +341,13 @@ namespace UI
             DialogResult result = MessageBox.Show("Are you sure you want delete the object?", 
                 "Delete object", MessageBoxButtons.YesNo);
 
-            string type = repo.GetUObjectById(id).ClassName;
+            string type = repo.GetUniversityById(id).ClassName;
             if (result == DialogResult.Yes)
             {
                 switch (type)
                 {
-                    case "UObject":
-                        repo.DeleteUObject(id);
+                    case "University":
+                        repo.DeleteUniversity(id);
                         break;
                     case "Person":
                         repo.DeletePerson(id);
@@ -378,7 +378,7 @@ namespace UI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            СhooseEntity window = new СhooseEntity(GetTypesOfEntities("root"));
+            СhooseEntity window = new СhooseEntity(GetTypesOfClassHierarhy("root"));
             if (window.ShowDialog() == DialogResult.OK)
             {
                 Create(window.SelectedType, null);
@@ -388,9 +388,9 @@ namespace UI
         private void btnCreate_Click(object sender, EventArgs e)
         {
             NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
-            string type = repo.GetUObjectById(info.Id).ClassName;
+            string type = repo.GetUniversityById(info.Id).ClassName;
 
-            СhooseEntity window = new СhooseEntity(GetTypesOfEntities(type));
+            СhooseEntity window = new СhooseEntity(GetTypesOfClassHierarhy(type));
 
             if (window.ShowDialog() == DialogResult.OK)
             {

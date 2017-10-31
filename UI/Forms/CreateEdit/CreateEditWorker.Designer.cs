@@ -34,7 +34,7 @@
             this.txtForSalary = new System.Windows.Forms.TextBox();
             this.datePickerForEmploymentDate = new System.Windows.Forms.DateTimePicker();
             this.tabControl.SuspendLayout();
-            this.pageForUObject.SuspendLayout();
+            this.pageForUniversity.SuspendLayout();
             this.pageForWorker.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +42,7 @@
             // 
             this.tabControl.Controls.Add(this.pageForWorker);
             this.tabControl.Controls.SetChildIndex(this.pageForWorker, 0);
-            this.tabControl.Controls.SetChildIndex(this.pageForUObject, 0);
+            this.tabControl.Controls.SetChildIndex(this.pageForUniversity, 0);
             // 
             // pageForWorker
             // 
@@ -101,8 +101,8 @@
             this.Name = "CreateEditWorker";
             this.Text = "CreateEditWorker";
             this.tabControl.ResumeLayout(false);
-            this.pageForUObject.ResumeLayout(false);
-            this.pageForUObject.PerformLayout();
+            this.pageForUniversity.ResumeLayout(false);
+            this.pageForUniversity.PerformLayout();
             this.pageForWorker.ResumeLayout(false);
             this.pageForWorker.PerformLayout();
             this.ResumeLayout(false);

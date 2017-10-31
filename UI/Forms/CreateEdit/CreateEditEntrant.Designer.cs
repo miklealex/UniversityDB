@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
-            this.pageForUObject.SuspendLayout();
+            this.pageForUniversity.SuspendLayout();
             this.pageForEntrant.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +42,7 @@
             // 
             this.tabControl.Controls.Add(this.pageForEntrant);
             this.tabControl.Controls.SetChildIndex(this.pageForEntrant, 0);
-            this.tabControl.Controls.SetChildIndex(this.pageForUObject, 0);
+            this.tabControl.Controls.SetChildIndex(this.pageForUniversity, 0);
             // 
             // pageForEntrant
             // 
@@ -99,8 +99,8 @@
             this.Name = "CreateEditEntrant";
             this.Text = "CreateEditEntrant";
             this.tabControl.ResumeLayout(false);
-            this.pageForUObject.ResumeLayout(false);
-            this.pageForUObject.PerformLayout();
+            this.pageForUniversity.ResumeLayout(false);
+            this.pageForUniversity.PerformLayout();
             this.pageForEntrant.ResumeLayout(false);
             this.pageForEntrant.PerformLayout();
             this.ResumeLayout(false);

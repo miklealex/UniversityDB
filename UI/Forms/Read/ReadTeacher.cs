@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Database.Entities;
+using Database.ClassHierarhy;
 
 namespace UI.Forms.Read
 {

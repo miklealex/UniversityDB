@@ -35,7 +35,7 @@
             this.txtForUniversity = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownForCourse)).BeginInit();
             this.tabControl.SuspendLayout();
-            this.pageForUObject.SuspendLayout();
+            this.pageForUniversity.SuspendLayout();
             this.pageForForeignStudent.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +43,7 @@
             // 
             this.tabControl.Controls.Add(this.pageForForeignStudent);
             this.tabControl.Controls.SetChildIndex(this.pageForForeignStudent, 0);
-            this.tabControl.Controls.SetChildIndex(this.pageForUObject, 0);
+            this.tabControl.Controls.SetChildIndex(this.pageForUniversity, 0);
             // 
             // pageForForeignStudent
             // 
@@ -101,8 +101,8 @@
             this.Text = "CreateEditForeignStudent";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownForCourse)).EndInit();
             this.tabControl.ResumeLayout(false);
-            this.pageForUObject.ResumeLayout(false);
-            this.pageForUObject.PerformLayout();
+            this.pageForUniversity.ResumeLayout(false);
+            this.pageForUniversity.PerformLayout();
             this.pageForForeignStudent.ResumeLayout(false);
             this.pageForForeignStudent.PerformLayout();
             this.ResumeLayout(false);
