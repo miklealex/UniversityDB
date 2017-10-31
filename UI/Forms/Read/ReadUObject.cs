@@ -15,11 +15,11 @@ namespace UI.Forms.Read
     {
         private University University;
 
-        protected URepository repo;
+        protected UniversityCentre repo;
 
         public ReadUniversity(University uobj)
         {
-            repo = new URepository();
+            repo = new UniversityCentre();
             InitializeComponent();
             University = uobj;
             ShowInfo();

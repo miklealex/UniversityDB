@@ -12,7 +12,7 @@ namespace UI
 {
     public partial class MainWindow : Form
     {
-        private URepository repo;
+        private UniversityCentre repo;
 
         private List<string> TypesOfClassHierarhy;
 
@@ -20,7 +20,7 @@ namespace UI
 
         public MainWindow()
         {
-            repo = new URepository();
+            repo = new UniversityCentre();
 
             InitializeComponent();
 

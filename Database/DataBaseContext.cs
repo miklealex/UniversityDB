@@ -9,14 +9,14 @@ using Database.ClassHierarhy;
 using Database.Repository;
 namespace Database
 {
-    public class UContext : DbContext
+    public class DataBaseContext : DbContext
     {
-        static UContext()
+        static DataBaseContext()
         {
-            System.Data.Entity.Database.SetInitializer<UContext>(new UContextInitializer());
+            System.Data.Entity.Database.SetInitializer<DataBaseContext>(new UContextInitializer());
         }
 
-        public UContext() : base ("ObjectApproach_1.0")
+        public DataBaseContext() : base ("ObjectApproach_1.0")
         {
         }
 
@@ -30,11 +30,11 @@ namespace Database
         public virtual DbSet<DBClass> DBClasses { get; set; }
     }
 
-    public class UContextInitializer : DropCreateDatabaseIfModelChanges<UContext>
+    public class UContextInitializer : DropCreateDatabaseIfModelChanges<DataBaseContext>
     {
-        protected override void Seed(UContext context)
+        protected override void Seed(DataBaseContext context)
         {
-            UniversityCentre repo = new UniversityCentre();
+            URepository repo = new URepository();
 
             repo.CreateClass(typeof(University), null);
             repo.CreateClass(typeof(Person), typeof(University));

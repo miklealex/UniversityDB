@@ -6,11 +6,11 @@ using System.Data;
 
 namespace Database.Repository
 {
-    public class URepository
+    public class UniversityCentre
     {
         private UContext context;
 
-        public URepository()
+        public UniversityCentre()
         {
             context = new UContext();
         }
