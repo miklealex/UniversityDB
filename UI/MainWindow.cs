@@ -428,5 +428,20 @@ namespace UI
             public int Id { get; set; }
             public bool Expanded { get; set; }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OnButtonEdit(sender, e);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OnButtonDetails(sender, e);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OnButtonDelete(sender, e);
+        }
     }
 }
