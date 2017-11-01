@@ -147,7 +147,7 @@ namespace UI
             switch (type)
             {
                 case "University":
-                    CreateEditUniversity uObjWindow = new CreateEditUniversity();
+                    UniversityCreating uObjWindow = new UniversityCreating();
                     if (uObjWindow.ShowDialog() == DialogResult.OK)
                     {
                         uObjWindow.Value.ParentId = ParentId;
@@ -157,7 +157,7 @@ namespace UI
                     }
                     break;
                 case "Person":
-                    CreateEditPerson personWindow = new CreateEditPerson();
+                    HumanCreating personWindow = new HumanCreating();
                     if (personWindow.ShowDialog() == DialogResult.OK)
                     {
                         personWindow.Value.ParentId = ParentId;
@@ -304,7 +304,7 @@ namespace UI
             switch (type)
             {
                 case "University":
-                    CreateEditUniversity uObjWindow = new CreateEditUniversity(repo.GetUniversityById(id));
+                    UniversityCreating uObjWindow = new UniversityCreating(repo.GetUniversityById(id));
                     if (uObjWindow.ShowDialog() == DialogResult.OK)
                     {
                         repo.UpdateUniversity(uObjWindow.Value);
@@ -312,7 +312,7 @@ namespace UI
                     }
                     break;
                 case "Person":
-                    CreateEditPerson personWindow = new CreateEditPerson(repo.GetPersonById(id));
+                    HumanCreating personWindow = new HumanCreating(repo.GetPersonById(id));
                     if (personWindow.ShowDialog() == DialogResult.OK)
                     {
                         repo.UpdatePerson(personWindow.Value);

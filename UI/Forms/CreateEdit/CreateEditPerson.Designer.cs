@@ -60,6 +60,7 @@
             // btnOk
             // 
             this.btnOk.Location = new System.Drawing.Point(258, 200);
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click_1);
             // 
             // pageForPerson
             // 

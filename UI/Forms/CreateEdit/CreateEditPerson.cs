@@ -102,5 +102,10 @@ namespace UI.Forms.CreateEdit
             person.Birthday = datePickerForBirthday.Value;
             person.Gender = radioForGender_Male.Checked;
         }
+
+        private void btnOk_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

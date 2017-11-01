@@ -90,5 +90,10 @@ namespace UI.Forms.CreateEdit
         {
             Close();
         }
+
+        private void btnOk_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
