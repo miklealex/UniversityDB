@@ -187,7 +187,7 @@ namespace UI
                     }
                     break;
                 case "Entrant":
-                    CreateEditEntrant entrantWindow = new CreateEditEntrant();
+                    EntrantCreating entrantWindow = new EntrantCreating();
                     if (entrantWindow.ShowDialog() == DialogResult.OK)
                     {
                         entrantWindow.Value.ParentId = ParentId;
@@ -336,7 +336,7 @@ namespace UI
                     }
                     break;
                 case "Entrant":
-                    CreateEditEntrant entrantWindow = new CreateEditEntrant(repo.GetEntrantById(id));
+                    EntrantCreating entrantWindow = new EntrantCreating(repo.GetEntrantById(id));
                     if (entrantWindow.ShowDialog() == DialogResult.OK)
                     {
                         repo.UpdateEntrant(entrantWindow.Value);
