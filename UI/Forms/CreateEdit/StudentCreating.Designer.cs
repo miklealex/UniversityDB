@@ -101,6 +101,7 @@
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Name = "StudentCreating";
+            this.Text = "Student Creating";
             this.Controls.SetChildIndex(this.Cancel, 0);
             this.Controls.SetChildIndex(this.Ok, 0);
             this.Controls.SetChildIndex(this.groupBox5, 0);

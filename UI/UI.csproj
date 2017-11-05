@@ -94,6 +94,12 @@
     <Compile Include="Forms\CreateEdit\CreateEditWorker.Designer.cs">
       <DependentUpon>CreateEditWorker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CreateEdit\ForeignStudentCreating.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateEdit\ForeignStudentCreating.Designer.cs">
+      <DependentUpon>ForeignStudentCreating.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CreateEdit\HumanCreating.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,12 @@
     </Compile>
     <Compile Include="Forms\CreateEdit\UniversityCreating.Designer.cs">
       <DependentUpon>UniversityCreating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateEdit\WorkerCreating.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateEdit\WorkerCreating.Designer.cs">
+      <DependentUpon>WorkerCreating.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Read\ReadEntrant.cs">
       <SubType>Form</SubType>
@@ -189,6 +201,9 @@
     <EmbeddedResource Include="Forms\CreateEdit\CreateEditWorker.resx">
       <DependentUpon>CreateEditWorker.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateEdit\ForeignStudentCreating.resx">
+      <DependentUpon>ForeignStudentCreating.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateEdit\HumanCreating.resx">
       <DependentUpon>HumanCreating.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateEdit\UniversityCreating.resx">
       <DependentUpon>UniversityCreating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateEdit\WorkerCreating.resx">
+      <DependentUpon>WorkerCreating.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Read\ReadEntrant.resx">
       <DependentUpon>ReadEntrant.cs</DependentUpon>

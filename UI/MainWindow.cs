@@ -167,7 +167,7 @@ namespace UI
                     }
                     break;
                 case "Worker":
-                    CreateEditWorker workerWindow = new CreateEditWorker();
+                    WorkerCreating workerWindow = new WorkerCreating();
                     if (workerWindow.ShowDialog() == DialogResult.OK)
                     {
                         workerWindow.Value.ParentId = ParentId;
@@ -207,7 +207,7 @@ namespace UI
                     }
                     break;
                 case "ForeignStudent":
-                    CreateEditForeignStudent foreignStudentWindow = new CreateEditForeignStudent();
+                    ForeignStudentCreating foreignStudentWindow = new ForeignStudentCreating();
                     if (foreignStudentWindow.ShowDialog() == DialogResult.OK)
                     {
                         foreignStudentWindow.Value.ParentId = ParentId;
@@ -320,7 +320,7 @@ namespace UI
                     }
                     break;
                 case "Worker":
-                    CreateEditWorker workerWindow = new CreateEditWorker(repo.GetWorkerById(id));
+                    WorkerCreating workerWindow = new WorkerCreating(repo.GetWorkerById(id));
                     if (workerWindow.ShowDialog() == DialogResult.OK)
                     {
                         repo.UpdateWorker(workerWindow.Value);
@@ -352,7 +352,7 @@ namespace UI
                     }
                     break;
                 case "ForeignStudent":
-                    CreateEditForeignStudent foreignStudentWindow = new CreateEditForeignStudent(repo.GetForeignStudentById(id));
+                    ForeignStudentCreating foreignStudentWindow = new ForeignStudentCreating(repo.GetForeignStudentById(id));
                     if (foreignStudentWindow.ShowDialog() == DialogResult.OK)
                     {
                         repo.UpdateForeignStudent(foreignStudentWindow.Value);
