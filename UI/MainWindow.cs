@@ -177,7 +177,7 @@ namespace UI
                     }
                     break;
                 case "Teacher":
-                    CreateEditTeacher teacherWindow = new CreateEditTeacher();
+                    TeacherCreating teacherWindow = new TeacherCreating();
                     if (teacherWindow.ShowDialog() == DialogResult.OK)
                     {
                         teacherWindow.Value.ParentId = ParentId;
@@ -328,7 +328,7 @@ namespace UI
                     }
                     break;
                 case "Teacher":
-                    CreateEditTeacher teacherWindow = new CreateEditTeacher(repo.GetTeacherById(id));
+                    TeacherCreating teacherWindow = new TeacherCreating(repo.GetTeacherById(id));
                     if (teacherWindow.ShowDialog() == DialogResult.OK)
                     {
                         repo.UpdateTeacher(teacherWindow.Value);
