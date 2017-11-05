@@ -197,7 +197,7 @@ namespace UI
                     }
                     break;
                 case "Student":
-                    CreateEditStudent studentWidnow = new CreateEditStudent();
+                    StudentCreating studentWidnow = new StudentCreating();
                     if (studentWidnow.ShowDialog() == DialogResult.OK)
                     {
                         studentWidnow.Value.ParentId = ParentId;
@@ -344,7 +344,7 @@ namespace UI
                     }
                     break;
                 case "Student":
-                    CreateEditStudent studentWindow = new CreateEditStudent(repo.GetStudentById(id));
+                    StudentCreating studentWindow = new StudentCreating(repo.GetStudentById(id));
                     if (studentWindow.ShowDialog() == DialogResult.OK)
                     {
                         repo.UpdateStudent(studentWindow.Value);
@@ -388,7 +388,7 @@ namespace UI
                         repo.DeleteEntrant(id);
                         break;
                     case "Student":
-                        CreateEditStudent studentWindow = new CreateEditStudent(repo.GetStudentById(id));
+                        StudentCreating studentWindow = new StudentCreating(repo.GetStudentById(id));
                         repo.DeleteStudent(id);
                         break;
                     case "ForeignStudent":

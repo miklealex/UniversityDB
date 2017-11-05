@@ -63,3 +63,4 @@ D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.CreateE
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.Read.ReadUniversity.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.UniversityCreating.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.HumanCreating.resources
+D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.StudentCreating.resources

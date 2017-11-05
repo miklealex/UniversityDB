@@ -100,6 +100,12 @@
     <Compile Include="Forms\CreateEdit\HumanCreating.Designer.cs">
       <DependentUpon>HumanCreating.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CreateEdit\StudentCreating.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateEdit\StudentCreating.Designer.cs">
+      <DependentUpon>StudentCreating.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CreateEdit\UniversityCreating.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateEdit\HumanCreating.resx">
       <DependentUpon>HumanCreating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateEdit\StudentCreating.resx">
+      <DependentUpon>StudentCreating.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateEdit\UniversityCreating.resx">
       <DependentUpon>UniversityCreating.cs</DependentUpon>
