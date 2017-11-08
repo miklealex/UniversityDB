@@ -78,9 +78,9 @@ namespace UI.Forms.Read
                 //case "Teacher":
                 //    detailsWindow = new ReadTeacher(repo.GetTeacherById(id));
                 //    break;
-                //case "Entrant":
-                //    detailsWindow = new ReadEntrant(repo.GetEntrantById(id));
-                //    break;
+                case "Entrant":
+                    detailsWindow = new Entrant(repo.GetEntrantById(id));
+                    break;
                 //case "Student":
                 //    detailsWindow = new ReadStudent(repo.GetStudentById(id));
                 //    break;

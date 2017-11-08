@@ -3,35 +3,32 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using Database.ClassHierarhy;
 
 namespace UI.Forms.Read
 {
-    public partial class ReadEntrant : UI.Forms.Read.ReadPerson
+    public partial class Entrant : UI.Forms.Read.Human
     {
-        private Entrant Entrant;
+        private Database.ClassHierarhy.Entrant _entrant;
 
-        public ReadEntrant(Entrant entrant) : base(entrant)
+        public Entrant(Database.ClassHierarhy.Entrant entrant) : base(entrant)
         {
             InitializeComponent();
-            Entrant = entrant;
+            _entrant = entrant;
             ShowInfo();
         }
 
-        protected ReadEntrant()
+        protected Entrant()
         {
             InitializeComponent();
         }
 
         private void ShowInfo()
         {
-            lblForIEE.Text = Entrant.IEE.ToString();
-            lblForGPA.Text = Entrant.GPA.ToString();
+            lblForIEE.Text = _entrant.IEE.ToString();
+            lblForGPA.Text = _entrant.GPA.ToString();
         }
     }
 }

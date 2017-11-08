@@ -40,7 +40,6 @@ D:\VSprojects\UniversityDB\UniversityDB\UI\bin\Debug\Database.dll.config
 D:\VSprojects\UniversityDB\UniversityDB\UI\bin\Debug\EntityFramework.xml
 D:\VSprojects\UniversityDB\UniversityDB\UI\bin\Debug\EntityFramework.SqlServer.xml
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.Read.ReadEntrant.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.Read.ReadForeignStudent.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.Read.ReadPerson.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.Read.ReadStudent.resources
@@ -63,3 +62,4 @@ D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.Teacher
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.EntrantCreating.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.Read.University.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.Read.Human.resources
+D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.Read.Entrant.resources
