@@ -3,33 +3,31 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Database.ClassHierarhy;
 
 namespace UI.Forms.Read
 {
-    public partial class ReadTeacher : UI.Forms.Read.ReadWorker
+    public partial class Teacher : UI.Forms.Read.Worker
     {
-        private Teacher Teacher;
+        private Database.ClassHierarhy.Teacher _teacher;
 
-        public ReadTeacher(Teacher teacher) : base(teacher)
+        public Teacher(Database.ClassHierarhy.Teacher teacher): base(teacher)
         {
             InitializeComponent();
-            Teacher = teacher;
+            _teacher = teacher;
             ShowInfo();
         }
 
-        protected ReadTeacher()
+        protected Teacher()
         {
             InitializeComponent();
         }
 
         private void ShowInfo()
         {
-            lblForPosition.Text = Teacher.Position;
+            lblForPosition.Text = _teacher.Position;
         }
     }
 }

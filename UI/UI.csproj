@@ -100,11 +100,29 @@
     <Compile Include="Forms\Read\Entrant.Designer.cs">
       <DependentUpon>Entrant.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Read\ForeignStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Read\ForeignStudent.Designer.cs">
+      <DependentUpon>ForeignStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Read\Human.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Read\Human.Designer.cs">
       <DependentUpon>Human.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Read\Student.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Read\Student.Designer.cs">
+      <DependentUpon>Student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Read\Teacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Read\Teacher.Designer.cs">
+      <DependentUpon>Teacher.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Read\University.cs">
       <SubType>Form</SubType>
@@ -112,41 +130,11 @@
     <Compile Include="Forms\Read\University.Designer.cs">
       <DependentUpon>University.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Read\ReadForeignStudent.cs">
+    <Compile Include="Forms\Read\Worker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Read\ReadForeignStudent.Designer.cs">
-      <DependentUpon>ReadForeignStudent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Read\ReadPerson.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Read\ReadPerson.Designer.cs">
-      <DependentUpon>ReadPerson.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Read\ReadStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Read\ReadStudent.Designer.cs">
-      <DependentUpon>ReadStudent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Read\ReadTeacher.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Read\ReadTeacher.Designer.cs">
-      <DependentUpon>ReadTeacher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Read\ReadUObject.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Read\ReadUObject.Designer.cs">
-      <DependentUpon>ReadUObject.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Read\ReadWorker.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Read\ReadWorker.Designer.cs">
-      <DependentUpon>ReadWorker.cs</DependentUpon>
+    <Compile Include="Forms\Read\Worker.Designer.cs">
+      <DependentUpon>Worker.cs</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
@@ -186,29 +174,23 @@
     <EmbeddedResource Include="Forms\Read\Entrant.resx">
       <DependentUpon>Entrant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Read\ForeignStudent.resx">
+      <DependentUpon>ForeignStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Read\Human.resx">
       <DependentUpon>Human.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Read\Student.resx">
+      <DependentUpon>Student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Read\Teacher.resx">
+      <DependentUpon>Teacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Read\University.resx">
       <DependentUpon>University.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Read\ReadForeignStudent.resx">
-      <DependentUpon>ReadForeignStudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Read\ReadPerson.resx">
-      <DependentUpon>ReadPerson.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Read\ReadStudent.resx">
-      <DependentUpon>ReadStudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Read\ReadTeacher.resx">
-      <DependentUpon>ReadTeacher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Read\ReadUObject.resx">
-      <DependentUpon>ReadUObject.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Read\ReadWorker.resx">
-      <DependentUpon>ReadWorker.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Read\Worker.resx">
+      <DependentUpon>Worker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

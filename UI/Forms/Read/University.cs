@@ -59,23 +59,23 @@ namespace UI.Forms.Read
                     detailsWindow = new University(repo.GetUniversityById(id));
                     break;
                 case "Person":
-                    detailsWindow = new University(repo.GetPersonById(id));
+                    detailsWindow = new Human(repo.GetPersonById(id));
                     break;
                 case "Worker":
-                    detailsWindow = new University(repo.GetWorkerById(id));
+                    detailsWindow = new Worker(repo.GetWorkerById(id));
                     break;
                 case "Teacher":
-                    detailsWindow = new University(repo.GetTeacherById(id));
+                    detailsWindow = new Teacher(repo.GetTeacherById(id));
                     break;
                 case "Entrant":
-                    detailsWindow = new University(repo.GetEntrantById(id));
+                    detailsWindow = new Entrant(repo.GetEntrantById(id));
                     break;
-                case "Student":
-                    detailsWindow = new University(repo.GetStudentById(id));
-                    break;
-                case "ForeignStudent":
-                    detailsWindow = new University(repo.GetForeignStudentById(id));
-                    break;
+                //case "Student":
+                //    detailsWindow = new University(repo.GetStudentById(id));
+                //    break;
+                //case "ForeignStudent":
+                //    detailsWindow = new University(repo.GetForeignStudentById(id));
+                //    break;
                 default:
                     throw new ArgumentException();
             }

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.lblForName = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.lblForSurname = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.lblForBirthday = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.lblForGender = new System.Windows.Forms.Label();
-            this.lblForBirthday = new System.Windows.Forms.Label();
-            this.lblForSurname = new System.Windows.Forms.Label();
-            this.lblForName = new System.Windows.Forms.Label();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -52,6 +52,16 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Name";
             // 
+            // lblForName
+            // 
+            this.lblForName.AutoSize = true;
+            this.lblForName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblForName.Location = new System.Drawing.Point(37, 16);
+            this.lblForName.Name = "lblForName";
+            this.lblForName.Size = new System.Drawing.Size(79, 16);
+            this.lblForName.TabIndex = 10;
+            this.lblForName.Text = "lblForName";
+            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.lblForSurname);
@@ -62,6 +72,16 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Surname";
             // 
+            // lblForSurname
+            // 
+            this.lblForSurname.AutoSize = true;
+            this.lblForSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblForSurname.Location = new System.Drawing.Point(31, 16);
+            this.lblForSurname.Name = "lblForSurname";
+            this.lblForSurname.Size = new System.Drawing.Size(96, 16);
+            this.lblForSurname.TabIndex = 11;
+            this.lblForSurname.Text = "lblForSurname";
+            // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.lblForBirthday);
@@ -71,6 +91,16 @@
             this.groupBox8.TabIndex = 4;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "date of birth";
+            // 
+            // lblForBirthday
+            // 
+            this.lblForBirthday.AutoSize = true;
+            this.lblForBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblForBirthday.Location = new System.Drawing.Point(45, 19);
+            this.lblForBirthday.Name = "lblForBirthday";
+            this.lblForBirthday.Size = new System.Drawing.Size(91, 16);
+            this.lblForBirthday.TabIndex = 12;
+            this.lblForBirthday.Text = "lblForBirthday";
             // 
             // groupBox9
             // 
@@ -92,36 +122,6 @@
             this.lblForGender.TabIndex = 13;
             this.lblForGender.Text = "lblForGender";
             // 
-            // lblForBirthday
-            // 
-            this.lblForBirthday.AutoSize = true;
-            this.lblForBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblForBirthday.Location = new System.Drawing.Point(45, 19);
-            this.lblForBirthday.Name = "lblForBirthday";
-            this.lblForBirthday.Size = new System.Drawing.Size(91, 16);
-            this.lblForBirthday.TabIndex = 12;
-            this.lblForBirthday.Text = "lblForBirthday";
-            // 
-            // lblForSurname
-            // 
-            this.lblForSurname.AutoSize = true;
-            this.lblForSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblForSurname.Location = new System.Drawing.Point(31, 16);
-            this.lblForSurname.Name = "lblForSurname";
-            this.lblForSurname.Size = new System.Drawing.Size(96, 16);
-            this.lblForSurname.TabIndex = 11;
-            this.lblForSurname.Text = "lblForSurname";
-            // 
-            // lblForName
-            // 
-            this.lblForName.AutoSize = true;
-            this.lblForName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblForName.Location = new System.Drawing.Point(37, 16);
-            this.lblForName.Name = "lblForName";
-            this.lblForName.Size = new System.Drawing.Size(79, 16);
-            this.lblForName.TabIndex = 10;
-            this.lblForName.Text = "lblForName";
-            // 
             // Human
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,6 +131,7 @@
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox6);
             this.Name = "Human";
+            this.Text = "Human";
             this.Controls.SetChildIndex(this.groupBox6, 0);
             this.Controls.SetChildIndex(this.groupBox9, 0);
             this.Controls.SetChildIndex(this.groupBox8, 0);

@@ -3,35 +3,32 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using Database.ClassHierarhy;
 
 namespace UI.Forms.Read
 {
-    public partial class ReadStudent : UI.Forms.Read.ReadPerson
+    public partial class Student : UI.Forms.Read.Human
     {
-        private Student Student;
+        private Database.ClassHierarhy.Student _student;
 
-        public ReadStudent(Student student) : base(student)
+        public Student(Database.ClassHierarhy.Student student) : base(student)
         {
             InitializeComponent();
-            Student = student;
+           _student = student;
             ShowInfo();
         }
 
-        protected ReadStudent()
+        protected Student()
         {
             InitializeComponent();
         }
 
         private void ShowInfo()
         {
-            lblForCourse.Text = Student.Course.ToString();
-            lblForEntryDate.Text = Student.EntryDate.ToShortDateString();
+            //lblForCourse.Text = _student.Course.ToString();
+            lblForEntryDate.Text = _student.EntryDate.ToShortDateString();
         }
     }
 }
