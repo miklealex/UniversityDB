@@ -52,48 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\CreateEdit\CreateEditEntrant.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CreateEdit\CreateEditEntrant.Designer.cs">
-      <DependentUpon>CreateEditEntrant.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CreateEdit\CreateEditForeignStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CreateEdit\CreateEditForeignStudent.Designer.cs">
-      <DependentUpon>CreateEditForeignStudent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CreateEdit\CreateEditPerson.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CreateEdit\CreateEditPerson.Designer.cs">
-      <DependentUpon>CreateEditPerson.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CreateEdit\CreateEditStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CreateEdit\CreateEditStudent.Designer.cs">
-      <DependentUpon>CreateEditStudent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CreateEdit\CreateEditTeacher.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CreateEdit\CreateEditTeacher.Designer.cs">
-      <DependentUpon>CreateEditTeacher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CreateEdit\CreateEditUObject.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CreateEdit\CreateEditUObject.Designer.cs">
-      <DependentUpon>CreateEditUObject.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CreateEdit\CreateEditWorker.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CreateEdit\CreateEditWorker.Designer.cs">
-      <DependentUpon>CreateEditWorker.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\CreateEdit\EntrantCreating.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +93,12 @@
     </Compile>
     <Compile Include="Forms\CreateEdit\WorkerCreating.Designer.cs">
       <DependentUpon>WorkerCreating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Read\University.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Read\University.Designer.cs">
+      <DependentUpon>University.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Read\ReadEntrant.cs">
       <SubType>Form</SubType>
@@ -192,27 +156,6 @@
     <Compile Include="СhooseEntity.Designer.cs">
       <DependentUpon>СhooseEntity.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\CreateEdit\CreateEditEntrant.resx">
-      <DependentUpon>CreateEditEntrant.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CreateEdit\CreateEditForeignStudent.resx">
-      <DependentUpon>CreateEditForeignStudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CreateEdit\CreateEditPerson.resx">
-      <DependentUpon>CreateEditPerson.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CreateEdit\CreateEditStudent.resx">
-      <DependentUpon>CreateEditStudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CreateEdit\CreateEditTeacher.resx">
-      <DependentUpon>CreateEditTeacher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CreateEdit\CreateEditUObject.resx">
-      <DependentUpon>CreateEditUObject.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CreateEdit\CreateEditWorker.resx">
-      <DependentUpon>CreateEditWorker.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateEdit\EntrantCreating.resx">
       <DependentUpon>EntrantCreating.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateEdit\WorkerCreating.resx">
       <DependentUpon>WorkerCreating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Read\University.resx">
+      <DependentUpon>University.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Read\ReadEntrant.resx">
       <DependentUpon>ReadEntrant.cs</DependentUpon>

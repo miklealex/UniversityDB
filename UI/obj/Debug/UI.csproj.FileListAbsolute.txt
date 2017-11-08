@@ -40,12 +40,6 @@ D:\VSprojects\UniversityDB\UniversityDB\UI\bin\Debug\Database.dll.config
 D:\VSprojects\UniversityDB\UniversityDB\UI\bin\Debug\EntityFramework.xml
 D:\VSprojects\UniversityDB\UniversityDB\UI\bin\Debug\EntityFramework.SqlServer.xml
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.CreateEditEntrant.resources
-D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.CreateEditForeignStudent.resources
-D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.CreateEditPerson.resources
-D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.CreateEditStudent.resources
-D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.CreateEditTeacher.resources
-D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.CreateEditWorker.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.Read.ReadEntrant.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.Read.ReadForeignStudent.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.Read.ReadPerson.resources
@@ -59,7 +53,6 @@ D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.csproj.GenerateResource.
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.exe
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.pdb
-D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.CreateEditUniversity.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.Read.ReadUniversity.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.UniversityCreating.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.HumanCreating.resources
@@ -68,3 +61,4 @@ D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.WorkerC
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.ForeignStudentCreating.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.TeacherCreating.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.EntrantCreating.resources
+D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.Read.University.resources

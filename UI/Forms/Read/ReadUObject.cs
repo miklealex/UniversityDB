@@ -13,11 +13,11 @@ namespace UI.Forms.Read
 {
     public partial class ReadUniversity : Form
     {
-        private University University;
+        private Database.ClassHierarhy.University University;
 
         protected UniversityCentre repo;
 
-        public ReadUniversity(University uobj)
+        public ReadUniversity(Database.ClassHierarhy.University uobj)
         {
             repo = new UniversityCentre();
             InitializeComponent();
@@ -39,7 +39,7 @@ namespace UI.Forms.Read
 
             if (University.ParentId != null)
             {
-                University major = repo.GetUniversityById((int)University.ParentId);
+                Database.ClassHierarhy.University major = repo.GetUniversityById((int)University.ParentId);
                 linkLblForMajor.Text = major.Title;
             }
             else
@@ -92,6 +92,11 @@ namespace UI.Forms.Read
             }
 
             detailsWindow.ShowDialog();
+        }
+
+        private void lblForTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -138,6 +138,7 @@
             this.lblForTitle.Size = new System.Drawing.Size(68, 16);
             this.lblForTitle.TabIndex = 4;
             this.lblForTitle.Text = "lblForTitle";
+            this.lblForTitle.Click += new System.EventHandler(this.lblForTitle_Click);
             // 
             // label4
             // 

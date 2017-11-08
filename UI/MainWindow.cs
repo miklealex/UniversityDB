@@ -62,12 +62,12 @@ namespace UI
 
         private void InitializeTree()
         {
-            foreach(University uobj in repo.GetAllObjectsByMajor(null))
+            foreach(Database.ClassHierarhy.University uobj in repo.GetAllObjectsByMajor(null))
             {
                 TreeNode node = tree.Nodes.Add(uobj.Title);
                 node.Tag = new NodeInfo { Id = uobj.Id, Expanded = false };
 
-                foreach (University uobj2 in repo.GetAllObjectsByMajor(uobj.Id))
+                foreach (Database.ClassHierarhy.University uobj2 in repo.GetAllObjectsByMajor(uobj.Id))
                 {
                     TreeNode node2 = node.Nodes.Add(uobj2.Title);
                     node2.Tag = new NodeInfo { Id = uobj2.Id, Expanded = false };
@@ -97,7 +97,7 @@ namespace UI
                 foreach (TreeNode node2 in e.Node.Nodes)
                 {
                     NodeInfo info2 = (NodeInfo)node2.Tag;
-                    foreach (University uobj in repo.GetAllObjectsByMajor(info2.Id))
+                    foreach (Database.ClassHierarhy.University uobj in repo.GetAllObjectsByMajor(info2.Id))
                     {
                         TreeNode node3 = node2.Nodes.Add(uobj.Title);
                         node3.Tag = new NodeInfo { Id = uobj.Id, Expanded = false };
@@ -234,30 +234,30 @@ namespace UI
         {
             string type = repo.GetUniversityById(id).ClassName;
 
-            ReadUniversity detailsWindow = null;
+            UI.Forms.Read.University detailsWindow = null;
             switch (type)
             {
                 case "University":
-                    detailsWindow = new ReadUniversity(repo.GetUniversityById(id));
+                    detailsWindow = new UI.Forms.Read.University(repo.GetUniversityById(id));
                     break;
-                case "Person":
-                    detailsWindow = new ReadPerson(repo.GetPersonById(id));
-                    break;
-                case "Worker":
-                    detailsWindow = new ReadWorker(repo.GetWorkerById(id));
-                    break;
-                case "Teacher":
-                    detailsWindow = new ReadTeacher(repo.GetTeacherById(id));
-                    break;
-                case "Entrant":
-                    detailsWindow = new ReadEntrant(repo.GetEntrantById(id));
-                    break;
-                case "Student":
-                    detailsWindow = new ReadStudent(repo.GetStudentById(id));
-                    break;
-                case "ForeignStudent":
-                    detailsWindow = new ReadForeignStudent(repo.GetForeignStudentById(id));
-                    break;
+                //case "Person":
+                //    detailsWindow = new ReadPerson(repo.GetPersonById(id));
+                //    break;
+                //case "Worker":
+                //    detailsWindow = new ReadWorker(repo.GetWorkerById(id));
+                //    break;
+                //case "Teacher":
+                //    detailsWindow = new ReadTeacher(repo.GetTeacherById(id));
+                //    break;
+                //case "Entrant":
+                //    detailsWindow = new ReadEntrant(repo.GetEntrantById(id));
+                //    break;
+                //case "Student":
+                //    detailsWindow = new ReadStudent(repo.GetStudentById(id));
+                //    break;
+                //case "ForeignStudent":
+                //    detailsWindow = new ReadForeignStudent(repo.GetForeignStudentById(id));
+                //    break;
                 default:
                     throw new ArgumentException();
             }
