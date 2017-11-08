@@ -240,9 +240,9 @@ namespace UI
                 case "University":
                     detailsWindow = new UI.Forms.Read.University(repo.GetUniversityById(id));
                     break;
-                //case "Person":
-                //    detailsWindow = new ReadPerson(repo.GetPersonById(id));
-                //    break;
+                case "Person":
+                    detailsWindow = new Human(repo.GetPersonById(id));
+                    break;
                 //case "Worker":
                 //    detailsWindow = new ReadWorker(repo.GetWorkerById(id));
                 //    break;

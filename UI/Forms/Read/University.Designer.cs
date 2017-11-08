@@ -106,6 +106,7 @@
             this.linkLblForMajor.TabIndex = 14;
             this.linkLblForMajor.TabStop = true;
             this.linkLblForMajor.Text = "linkLblForMajor";
+            this.linkLblForMajor.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblForMajor_LinkClicked_1);
             // 
             // groupBox4
             // 

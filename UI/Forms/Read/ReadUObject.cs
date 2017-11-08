@@ -63,30 +63,30 @@ namespace UI.Forms.Read
         {
             string type = repo.GetUniversityById(id).ClassName;
 
-            ReadUniversity detailsWindow = null;
+            University detailsWindow = null;
             switch (type)
             {
                 case "University":
-                    detailsWindow = new ReadUniversity(repo.GetUniversityById(id));
+                    detailsWindow = new University(repo.GetUniversityById(id));
                     break;
                 case "Person":
-                    detailsWindow = new ReadPerson(repo.GetPersonById(id));
+                    detailsWindow = new Human(repo.GetPersonById(id));
                     break;
-                case "Worker":
-                    detailsWindow = new ReadWorker(repo.GetWorkerById(id));
-                    break;
-                case "Teacher":
-                    detailsWindow = new ReadTeacher(repo.GetTeacherById(id));
-                    break;
-                case "Entrant":
-                    detailsWindow = new ReadEntrant(repo.GetEntrantById(id));
-                    break;
-                case "Student":
-                    detailsWindow = new ReadStudent(repo.GetStudentById(id));
-                    break;
-                case "ForeignStudent":
-                    detailsWindow = new ReadForeignStudent(repo.GetForeignStudentById(id));
-                    break;
+                //case "Worker":
+                //    detailsWindow = new ReadWorker(repo.GetWorkerById(id));
+                //    break;
+                //case "Teacher":
+                //    detailsWindow = new ReadTeacher(repo.GetTeacherById(id));
+                //    break;
+                //case "Entrant":
+                //    detailsWindow = new ReadEntrant(repo.GetEntrantById(id));
+                //    break;
+                //case "Student":
+                //    detailsWindow = new ReadStudent(repo.GetStudentById(id));
+                //    break;
+                //case "ForeignStudent":
+                //    detailsWindow = new ReadForeignStudent(repo.GetForeignStudentById(id));
+                //    break;
                 default:
                     throw new ArgumentException();
             }

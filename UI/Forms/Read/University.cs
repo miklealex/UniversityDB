@@ -83,20 +83,15 @@ namespace UI.Forms.Read
             detailsWindow.ShowDialog();
         }
 
-        private void linkLblForMajor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            int id = (int)_University.ParentId;
-            ShowDetails(id);
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLblForMajor_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            int id = (int)_University.ParentId;
+            ShowDetails(id);
         }
     }
 }

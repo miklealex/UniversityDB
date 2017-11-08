@@ -94,6 +94,12 @@
     <Compile Include="Forms\CreateEdit\WorkerCreating.Designer.cs">
       <DependentUpon>WorkerCreating.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Read\Human.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Read\Human.Designer.cs">
+      <DependentUpon>Human.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Read\University.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateEdit\WorkerCreating.resx">
       <DependentUpon>WorkerCreating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Read\Human.resx">
+      <DependentUpon>Human.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Read\University.resx">
       <DependentUpon>University.cs</DependentUpon>

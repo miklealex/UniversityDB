@@ -62,3 +62,4 @@ D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.Foreign
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.TeacherCreating.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.EntrantCreating.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.Read.University.resources
+D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.Read.Human.resources
