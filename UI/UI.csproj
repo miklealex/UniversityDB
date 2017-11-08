@@ -58,6 +58,12 @@
     <Compile Include="Forms\CreateEdit\EntrantCreating.Designer.cs">
       <DependentUpon>EntrantCreating.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CreateEdit\Faculty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateEdit\Faculty.Designer.cs">
+      <DependentUpon>Faculty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CreateEdit\ForeignStudentCreating.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,12 @@
     </Compile>
     <Compile Include="Forms\Read\Entrant.Designer.cs">
       <DependentUpon>Entrant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Read\FacultyRead.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Read\FacultyRead.Designer.cs">
+      <DependentUpon>FacultyRead.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Read\ForeignStudent.cs">
       <SubType>Form</SubType>
@@ -153,6 +165,9 @@
     <EmbeddedResource Include="Forms\CreateEdit\EntrantCreating.resx">
       <DependentUpon>EntrantCreating.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateEdit\Faculty.resx">
+      <DependentUpon>Faculty.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateEdit\ForeignStudentCreating.resx">
       <DependentUpon>ForeignStudentCreating.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Read\Entrant.resx">
       <DependentUpon>Entrant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Read\FacultyRead.resx">
+      <DependentUpon>FacultyRead.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Read\ForeignStudent.resx">
       <DependentUpon>ForeignStudent.cs</DependentUpon>

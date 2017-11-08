@@ -123,7 +123,7 @@ namespace UI
                 button1.Enabled = true;
                 button2.Enabled = true;
                 button3.Enabled = true;
-                if(tree.SelectedNode.Parent == null)
+                if(tree.SelectedNode != null && tree.SelectedNode.Parent == null)
                 {
                     button4.Enabled = true;
                 }
@@ -216,6 +216,16 @@ namespace UI
                         title = foreignStudentWindow.Value.Title;
                     }
                     break;
+                case "Faculty":
+                    UI.Forms.CreateEdit.Faculty facult = new Forms.CreateEdit.Faculty();
+                    if(facult.ShowDialog() == DialogResult.OK)
+                    {
+                        facult.Value.ParentId = ParentId;
+                        repo.CreateFaculty(facult.Value);
+                        id = facult.Value.Id;
+                        title = facult.Value.Title;
+                    }
+                    break;
                 default:
                     throw new ArgumentException();
             }
@@ -257,6 +267,9 @@ namespace UI
                     break;
                 case "ForeignStudent":
                     detailsWindow = new UI.Forms.Read.ForeignStudent(repo.GetForeignStudentById(id));
+                    break;
+                case "Faculty":
+                    detailsWindow = new UI.Forms.Read.FacultyRead(repo.GetFacultyById(id));
                     break;
                 default:
                     throw new ArgumentException();
@@ -359,6 +372,14 @@ namespace UI
                         tree.SelectedNode.Text = foreignStudentWindow.Value.Title;
                     }
                     break;
+                case "Faculty":
+                    UI.Forms.CreateEdit.Faculty facult = new UI.Forms.CreateEdit.Faculty(repo.GetFacultyById(id));
+                    if(facult.ShowDialog() == DialogResult.OK)
+                    {
+                        repo.UpdateFaculty(facult.Value);
+                        tree.SelectedNode.Text = facult.Value.Title;
+                    }
+                    break;
                 default:
                     throw new ArgumentException();
             }
@@ -393,6 +414,9 @@ namespace UI
                         break;
                     case "ForeignStudent":
                         repo.DeleteForeignStudent(id);
+                        break;
+                    case "Faculty":
+                        repo.DeleteFaculty(id);
                         break;
                     default:
                         throw new ArgumentException();

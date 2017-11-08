@@ -121,4 +121,17 @@ namespace Database.ClassHierarhy
             Position = dbTeacher.Position;
         }
     }
+
+    public  class Faculty : University
+    {
+        public string FacultyName { get; set; }
+
+        public Faculty() { }
+
+        public Faculty(DBFaculty dbFaculty)
+            : base(dbFaculty.DBUniversity)
+        {
+            FacultyName = dbFaculty.FacultyName;
+        }
+    }
 }

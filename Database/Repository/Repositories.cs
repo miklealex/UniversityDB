@@ -45,6 +45,10 @@ namespace Database.Repository
             .Where(o => o.DBUniversity.Class.Name == typeof(Teacher).Name).ToList()
             .Select(teacher => new Teacher(teacher, context));
 
+        private IEnumerable<Faculty> Faculties => context.DBFaculty
+            .Where(o => o.DBUniversity.Class.Name == typeof(Faculty).Name).ToList()
+            .Select(facult => new Faculty(facult));
+
         #endregion
 
         #region Create. private methods
@@ -179,6 +183,23 @@ namespace Database.Repository
             return id;
         }
 
+        private int CreateFaculty(Faculty facult, DBClass dbClass)
+        {
+            int id = CreateUniversity(facult, dbClass);
+
+            DBFaculty dbFaculty = new DBFaculty
+            {
+                FacultyName = facult.FacultyName,
+                Id = id,
+            };
+
+            context.DBFaculty.Add(dbFaculty);
+            context.SaveChanges();
+
+            facult.Id = id;
+            return id;
+        }
+
         #endregion
 
 
@@ -233,6 +254,12 @@ namespace Database.Repository
                 .First(c => c.Name == className));
         }
 
+        public int CreateFaculty(Faculty facult)
+        {
+            string className = facult.GetType().Name;
+            return CreateFaculty(facult, context.DBClasses.First(c => c.Name == className));
+        }
+
         #endregion
 
         #region Read
@@ -277,6 +304,12 @@ namespace Database.Repository
         {
             DBTeacher dbTeacher = context.DBTeachers.First(t => t.Id == id);
             return new Teacher(dbTeacher, context);
+        }
+
+        public Faculty GetFacultyById(int id)
+        {
+            DBFaculty dBFaculty = context.DBFaculty.First(t => t.Id == id);
+            return new Faculty(dBFaculty);
         }
 
         #endregion
@@ -352,6 +385,15 @@ namespace Database.Repository
             UpdateWorker(teacher);
         }
 
+        public void UpdateFaculty(Faculty facult)
+        {
+            DBFaculty dBFaculty = context.DBFaculty.First(t => t.Id == facult.Id);
+
+            dBFaculty.FacultyName = facult.FacultyName;
+
+            UpdateUniversity(facult);
+        }
+
         #endregion
 
         #region Delete
@@ -419,6 +461,15 @@ namespace Database.Repository
             DeleteWorker(id);
         }
 
+        public void DeleteFaculty(int id)
+        {
+            DBFaculty forRemove = context.DBFaculty.First(t => t.Id == id);
+
+            context.DBFaculty.Remove(forRemove);
+
+            DeleteUniversity(id);
+        }
+
         #endregion
 
         #region GetUniversitysByMajor(int? major)
@@ -456,6 +507,11 @@ namespace Database.Repository
         public IEnumerable<Teacher> GetTeachersByMajor(int? major)
         {
             return Teachers.Where(t => t.ParentId == major);
+        }
+
+        public IEnumerable<Faculty> GetFacultyByMajor(int? major)
+        {
+            return Faculties.Where(f => f.ParentId == major);
         }
 
         public IEnumerable<University> GetAllObjectsByMajor(int? major)

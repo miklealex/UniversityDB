@@ -57,6 +57,17 @@ namespace Database
         public bool Gender { get; set; }
     }
 
+    public class DBFaculty
+    {
+        [Key, ForeignKey("DBUniversity")]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int Id { get; set; }
+
+        public virtual DBUniversity DBUniversity { get; set; }
+
+        public string FacultyName { get; set; }
+    }
+
     public class DBStudent
     {
         [Key, ForeignKey("DBUniversity")]

@@ -28,6 +28,7 @@ namespace Database
         public virtual DbSet<DBWorker> DBWorkers { get; set; }
         public virtual DbSet<DBTeacher> DBTeachers { get; set; }
         public virtual DbSet<DBClass> DBClasses { get; set; }
+        public virtual DbSet<DBFaculty> DBFaculty { get; set; }
     }
 
     public class UContextInitializer : DropCreateDatabaseIfModelChanges<UContext>
@@ -43,6 +44,7 @@ namespace Database
             repo.CreateClass(typeof(Entrant), typeof(Person));
             repo.CreateClass(typeof(Worker), typeof(Person));
             repo.CreateClass(typeof(Teacher), typeof(Worker));
+            repo.CreateClass(typeof(Faculty), typeof(University));
         }
     }
 }
