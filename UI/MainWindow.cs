@@ -217,7 +217,7 @@ namespace UI
                     }
                     break;
                 case "Faculty":
-                    UI.Forms.CreateEdit.Faculty facult = new Forms.CreateEdit.Faculty();
+                    UI.Forms.CreateEdit.Faculty facult = new Forms.CreateEdit.Faculty(repo);
                     if(facult.ShowDialog() == DialogResult.OK)
                     {
                         facult.Value.ParentId = ParentId;

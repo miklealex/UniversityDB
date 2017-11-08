@@ -30,7 +30,10 @@
         {
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.FacNamelb = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox6
@@ -52,15 +55,40 @@
             this.FacNamelb.TabIndex = 0;
             this.FacNamelb.Text = "label1";
             // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.linkLabel1);
+            this.groupBox7.Location = new System.Drawing.Point(13, 404);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(177, 58);
+            this.groupBox7.TabIndex = 4;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Dean";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(48, 26);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(55, 13);
+            this.linkLabel1.TabIndex = 0;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "linkLabel1";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // FacultyRead
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(303, 413);
+            this.ClientSize = new System.Drawing.Size(303, 474);
+            this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
             this.Name = "FacultyRead";
             this.Controls.SetChildIndex(this.groupBox6, 0);
+            this.Controls.SetChildIndex(this.groupBox7, 0);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -69,5 +97,7 @@
 
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label FacNamelb;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

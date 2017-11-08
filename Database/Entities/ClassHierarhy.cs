@@ -120,18 +120,22 @@ namespace Database.ClassHierarhy
         {
             Position = dbTeacher.Position;
         }
+
     }
 
     public  class Faculty : University
     {
         public string FacultyName { get; set; }
-
+        public int DeanId { get; set; }
+        public DBTeacher Den { get; set; }
         public Faculty() { }
 
         public Faculty(DBFaculty dbFaculty)
             : base(dbFaculty.DBUniversity)
         {
             FacultyName = dbFaculty.FacultyName;
+            DeanId = dbFaculty.TeacherId;
+            Den = dbFaculty.Den;
         }
     }
 }

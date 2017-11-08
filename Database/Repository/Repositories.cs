@@ -15,6 +15,11 @@ namespace Database.Repository
             context = new UContext();
         }
 
+        public List<DBTeacher> GetAllTeachers()
+        {
+            return context.DBTeachers.ToList();
+        }
+
         #region Universitys => context.DBUniversitys.Where(o => o.Sealed).ToList().Select(uobj => new University(uobj));
 
         private IEnumerable<University> Universitys => context.DBUniversitys
@@ -191,6 +196,8 @@ namespace Database.Repository
             {
                 FacultyName = facult.FacultyName,
                 Id = id,
+                TeacherId = facult.Id,
+                Den = facult.Den
             };
 
             context.DBFaculty.Add(dbFaculty);
@@ -304,6 +311,11 @@ namespace Database.Repository
         {
             DBTeacher dbTeacher = context.DBTeachers.First(t => t.Id == id);
             return new Teacher(dbTeacher, context);
+        }
+
+        public DBTeacher GetDBTeacherById(int id)
+        {
+            return context.DBTeachers.First(t => t.Id == id);
         }
 
         public Faculty GetFacultyById(int id)

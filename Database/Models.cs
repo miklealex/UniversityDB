@@ -66,6 +66,10 @@ namespace Database
         public virtual DBUniversity DBUniversity { get; set; }
 
         public string FacultyName { get; set; }
+
+        [ForeignKey("Den")]
+        public int TeacherId { get; set; }
+        public DBTeacher Den { get; set; }
     }
 
     public class DBStudent

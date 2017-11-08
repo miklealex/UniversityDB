@@ -43,7 +43,7 @@ namespace UI.Forms.CreateEdit
 
         protected override bool Verify()
         {
-            return txtForPosition.Text.Length > 0 &&
+            return txtForPosition != null && txtForPosition.Text.Length > 0 &&
                 base.Verify();
         }
 

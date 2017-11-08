@@ -31,7 +31,7 @@ namespace Database
         public virtual DbSet<DBFaculty> DBFaculty { get; set; }
     }
 
-    public class UContextInitializer : DropCreateDatabaseIfModelChanges<UContext>
+    public class UContextInitializer : DropCreateDatabaseAlways<UContext>//DropCreateDatabaseIfModelChanges<UContext>
     {
         protected override void Seed(UContext context)
         {

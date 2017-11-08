@@ -28,6 +28,30 @@ namespace UI.Forms.Read
         private void ShowInfo()
         {
             FacNamelb.Text = _facult.FacultyName;
+            linkLabel1.Text = repo.GetTeacherById(_facult.DeanId).Name;
+        }
+
+        public void ShowDean(int id)
+        {
+            string type = repo.GetUniversityById(id).ClassName;
+
+            UI.Forms.Read.University detailsWindow = null;
+            switch (type)
+            {
+
+                case "Teacher":
+                    detailsWindow = new UI.Forms.Read.Teacher(repo.GetTeacherById(id));
+                    break;
+                default:
+                    throw new ArgumentException();
+            }
+
+            detailsWindow.ShowDialog();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ShowDean(_facult.DeanId);
         }
     }
 }

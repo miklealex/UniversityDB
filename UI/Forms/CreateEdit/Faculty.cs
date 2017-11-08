@@ -6,15 +6,18 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Database.ClassHierarhy;
+using Database.Repository;
 
 namespace UI.Forms.CreateEdit
 {
     public partial class Faculty : UI.Forms.CreateEdit.UniversityCreating
     {
          public new Database.ClassHierarhy.Faculty Value;
-
-        public Faculty()
+        private UniversityCentre repo;
+        private bool isDean = false;
+        public Faculty(UniversityCentre repos)
         {
+            repo = repos;
             InitializeComponent();
         }
 
@@ -57,7 +60,7 @@ namespace UI.Forms.CreateEdit
 
         protected override bool Verify()
         {
-            return  tBFacultyName != null && tBFacultyName.Text.Length > 0 && base.Verify();
+            return  tBFacultyName != null && tBFacultyName.Text.Length > 0  && isDean && base.Verify();
         }
 
         private void ShowInfo()
@@ -80,6 +83,46 @@ namespace UI.Forms.CreateEdit
             FillObject(Value);
             this.DialogResult = DialogResult.OK;
             Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Value == null)
+            {
+                Value = new Database.ClassHierarhy.Faculty();
+            }
+            AddDean dean = new AddDean(repo);
+            if(dean.ShowDialog() == DialogResult.OK)
+            {
+                Value.DeanId = dean.DEAN_ID;
+                Value.Den = repo.GetDBTeacherById(dean.DEAN_ID);
+                label1.Text = repo.GetTeacherById(dean.DEAN_ID).Name;
+                isDean = true;
+                Ok.Enabled = Verify();
+            }
+        }
+
+        public void ShowDean(int id)
+        {
+            string type = repo.GetUniversityById(id).ClassName;
+
+            UI.Forms.Read.University detailsWindow = null;
+            switch (type)
+            {
+                    
+                case "Teacher":
+                    detailsWindow = new UI.Forms.Read.Teacher(repo.GetTeacherById(id));
+                    break;
+                default:
+                    throw new ArgumentException();
+            }
+
+            detailsWindow.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            ShowDean(Value.DeanId);
         }
     }
 }
