@@ -28,7 +28,7 @@ namespace Database
         public virtual DbSet<DBWorker> DBWorkers { get; set; }
         public virtual DbSet<DBTeacher> DBTeachers { get; set; }
         public virtual DbSet<DBClass> DBClasses { get; set; }
-        public virtual DbSet<DBFaculty> DBFaculty { get; set; }
+        public virtual DbSet<DBFaculty> DBFaculties { get; set; }
     }
 
     public class UContextInitializer : DropCreateDatabaseAlways<UContext>//DropCreateDatabaseIfModelChanges<UContext>

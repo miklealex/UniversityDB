@@ -50,7 +50,7 @@ namespace Database.Repository
             .Where(o => o.DBUniversity.Class.Name == typeof(Teacher).Name).ToList()
             .Select(teacher => new Teacher(teacher, context));
 
-        private IEnumerable<Faculty> Faculties => context.DBFaculty
+        private IEnumerable<Faculty> Faculties => context.DBFaculties
             .Where(o => o.DBUniversity.Class.Name == typeof(Faculty).Name).ToList()
             .Select(facult => new Faculty(facult));
 
@@ -200,7 +200,7 @@ namespace Database.Repository
                 Den = facult.Den
             };
 
-            context.DBFaculty.Add(dbFaculty);
+            context.DBFaculties.Add(dbFaculty);
             context.SaveChanges();
 
             facult.Id = id;
@@ -320,7 +320,7 @@ namespace Database.Repository
 
         public Faculty GetFacultyById(int id)
         {
-            DBFaculty dBFaculty = context.DBFaculty.First(t => t.Id == id);
+            DBFaculty dBFaculty = context.DBFaculties.First(t => t.Id == id);
             return new Faculty(dBFaculty);
         }
 
@@ -399,7 +399,7 @@ namespace Database.Repository
 
         public void UpdateFaculty(Faculty facult)
         {
-            DBFaculty dBFaculty = context.DBFaculty.First(t => t.Id == facult.Id);
+            DBFaculty dBFaculty = context.DBFaculties.First(t => t.Id == facult.Id);
 
             dBFaculty.FacultyName = facult.FacultyName;
 
@@ -475,9 +475,9 @@ namespace Database.Repository
 
         public void DeleteFaculty(int id)
         {
-            DBFaculty forRemove = context.DBFaculty.First(t => t.Id == id);
+            DBFaculty forRemove = context.DBFaculties.First(t => t.Id == id);
 
-            context.DBFaculty.Remove(forRemove);
+            context.DBFaculties.Remove(forRemove);
 
             DeleteUniversity(id);
         }
