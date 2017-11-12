@@ -15,6 +15,12 @@ namespace Database.Repository
             context = new UContext();
         }
 
+
+        public UContext GetContext()
+        {
+            return context;
+        }
+
         public List<DBTeacher> GetAllTeachers()
         {
             return context.DBTeachers.ToList();
@@ -53,6 +59,10 @@ namespace Database.Repository
         private IEnumerable<Faculty> Faculties => context.DBFaculties
             .Where(o => o.DBUniversity.Class.Name == typeof(Faculty).Name).ToList()
             .Select(facult => new Faculty(facult));
+
+        private IEnumerable<Institute> Institutes => context.DBInstitutes
+            .Where(i => i.DBUniversity.Class.Name == typeof(Institute).Name).ToList()
+            .Select(inst => new Institute(inst, context));
 
         #endregion
 
@@ -207,6 +217,25 @@ namespace Database.Repository
             return id;
         }
 
+        private int CreateInstitute(Institute inst, DBClass dbClass)
+        {
+            int id = CreateFaculty(inst);
+
+            DBInstitute dbInstitute = new DBInstitute
+            {
+                InstituteName = inst.InstituteName,
+                Id = inst.Id,
+                Head = inst.Head
+            };
+
+            context.DBInstitutes.Add(dbInstitute);
+            context.SaveChanges();
+
+            inst.Id = id;
+
+            return id;
+        }
+
         #endregion
 
 
@@ -267,6 +296,12 @@ namespace Database.Repository
             return CreateFaculty(facult, context.DBClasses.First(c => c.Name == className));
         }
 
+        public int CreateInstitute(Institute inst)
+        {
+            string className = inst.GetType().Name;
+            return CreateInstitute(inst, context.DBClasses.First(c => c.Name == className));
+        }
+
         #endregion
 
         #region Read
@@ -324,6 +359,11 @@ namespace Database.Repository
             return new Faculty(dBFaculty);
         }
 
+        public Institute GetInstituteById(int id)
+        {
+            DBInstitute dbInstitute =  context.DBInstitutes.First(i => i.Id == id);
+            return new Institute(dbInstitute, context);
+        }
         #endregion
 
         #region Update
@@ -393,6 +433,7 @@ namespace Database.Repository
             DBTeacher dbTeacher = context.DBTeachers.First(t => t.Id == teacher.Id);
 
             dbTeacher.Position = teacher.Position;
+            dbTeacher.InstituteId = teacher.InstituteId;
 
             UpdateWorker(teacher);
         }
@@ -404,6 +445,16 @@ namespace Database.Repository
             dBFaculty.FacultyName = facult.FacultyName;
 
             UpdateUniversity(facult);
+        }
+
+        public void UpdateInstitute(Institute inst)
+        {
+            DBInstitute dbInstitute = context.DBInstitutes.First(i => i.Id == inst.Id);
+
+            dbInstitute.InstituteName = inst.InstituteName;
+            dbInstitute.Head = inst.Head;
+
+            UpdateFaculty(inst);
         }
 
         #endregion
@@ -482,6 +533,15 @@ namespace Database.Repository
             DeleteUniversity(id);
         }
 
+        public void DeleteInstitute(int id)
+        {
+            DBInstitute forRemove = context.DBInstitutes.First(i => i.Id == id);
+
+            context.DBInstitutes.Remove(forRemove);
+
+            DeleteFaculty(id);
+        }
+
         #endregion
 
         #region GetUniversitysByMajor(int? major)
@@ -526,10 +586,17 @@ namespace Database.Repository
             return Faculties.Where(f => f.ParentId == major);
         }
 
+        public IEnumerable<Institute> GetInstituteByMajor(int? major)
+        {
+            return Institutes.Where(i => i.ParentId == major);
+        }
+
         public IEnumerable<University> GetAllObjectsByMajor(int? major)
         {
             return context.DBUniversitys.Where(o => o.ParentId == major).ToList().Select(o => new University(o));
         }
+
+       
 
         //public Dictionary<string, IEnumerable<University>> GetAllObjectsByMajor(int? major)
         //{

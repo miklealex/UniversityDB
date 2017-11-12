@@ -72,6 +72,21 @@ namespace Database
         public DBTeacher Den { get; set; }
     }
 
+    public class DBInstitute
+    {
+        [Key, ForeignKey("DBUniversity")]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int Id { get; set; }
+
+        public virtual DBUniversity DBUniversity { get; set; }
+
+        public string InstituteName { get; set; }
+
+        [ForeignKey("Head")]
+        public int HeadId { get; set; }
+        public DBTeacher Head { get; set; }
+    }
+
     public class DBStudent
     {
         [Key, ForeignKey("DBUniversity")]
@@ -129,5 +144,7 @@ namespace Database
         public virtual DBUniversity DBUniversity { get; set; }
 
         public string Position { get; set; }
+
+        public int InstituteId { get; set; }
     }
 }

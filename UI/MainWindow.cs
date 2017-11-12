@@ -217,13 +217,31 @@ namespace UI
                     }
                     break;
                 case "Faculty":
-                    UI.Forms.CreateEdit.Faculty facult = new Forms.CreateEdit.Faculty(repo);
+                    UI.Forms.CreateEdit.Faculty facult = new Forms.CreateEdit.Faculty();
+                    facult.repo = repo;
                     if(facult.ShowDialog() == DialogResult.OK)
                     {
                         facult.Value.ParentId = ParentId;
                         repo.CreateFaculty(facult.Value);
                         id = facult.Value.Id;
                         title = facult.Value.Title;
+                    }
+                    break;
+                case "Institute":
+                    UI.Forms.CreateEdit.Institute inst = new Forms.CreateEdit.Institute(repo);
+                    
+                    if(inst.ShowDialog() == DialogResult.OK)
+                    {
+                        inst.Value.ParentId = ParentId;
+                        repo.CreateInstitute(inst.Value);
+                        foreach(ListViewItem obj in inst.listView1.Items)
+                        {
+                            Database.ClassHierarhy.Teacher currentTeacher = repo.GetTeacherById(int.Parse(obj.Text.Split(' ')[0]));
+                            currentTeacher.InstituteId = inst.Value.Id;
+                            repo.UpdateTeacher(currentTeacher);
+                        }
+                        id = inst.Value.Id;
+                        title = inst.Value.Title;
                     }
                     break;
                 default:
@@ -270,6 +288,9 @@ namespace UI
                     break;
                 case "Faculty":
                     detailsWindow = new UI.Forms.Read.FacultyRead(repo.GetFacultyById(id));
+                    break;
+                case "Institute":
+                    detailsWindow = new UI.Forms.Read.InstituteRead(repo.GetInstituteById(id));
                     break;
                 default:
                     throw new ArgumentException();
@@ -373,11 +394,20 @@ namespace UI
                     }
                     break;
                 case "Faculty":
-                    UI.Forms.CreateEdit.Faculty facult = new UI.Forms.CreateEdit.Faculty(repo.GetFacultyById(id));
+                    UI.Forms.CreateEdit.Faculty facult = new UI.Forms.CreateEdit.Faculty(repo.GetFacultyById(id), repo);
                     if(facult.ShowDialog() == DialogResult.OK)
                     {
                         repo.UpdateFaculty(facult.Value);
                         tree.SelectedNode.Text = facult.Value.Title;
+                    }
+                    break;
+                case "Institute":
+                    UI.Forms.CreateEdit.Institute inst = new UI.Forms.CreateEdit.Institute(repo.GetInstituteById(id), repo);
+                    
+                    if(inst.ShowDialog() == DialogResult.OK)
+                    {
+                        repo.UpdateInstitute(inst.Value);
+                        tree.SelectedNode.Text = inst.Value.Title;
                     }
                     break;
                 default:
@@ -418,6 +448,9 @@ namespace UI
                     case "Faculty":
                         repo.DeleteFaculty(id);
                         break;
+                    case "Institute":
+                    repo.DeleteInstitute(id);
+                        break;
                     default:
                         throw new ArgumentException();
                 }
@@ -441,14 +474,17 @@ namespace UI
 
         private void OnButtonCreate(object sender, EventArgs e)
         {
-            NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
-            string type = repo.GetUniversityById(info.Id).ClassName;
-
-            СhooseEntity window = new СhooseEntity(GetTypesOfClassHierarhy(type));
-
-            if (window.ShowDialog() == DialogResult.OK)
+            if (tree.SelectedNode != null)
             {
-                Create(window.SelectedType, tree.SelectedNode);
+                NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
+                string type = repo.GetUniversityById(info.Id).ClassName;
+
+                СhooseEntity window = new СhooseEntity(GetTypesOfClassHierarhy(type));
+
+                if (window.ShowDialog() == DialogResult.OK)
+                {
+                    Create(window.SelectedType, tree.SelectedNode);
+                }
             }
         }
 

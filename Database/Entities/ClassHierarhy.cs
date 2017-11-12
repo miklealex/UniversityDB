@@ -112,6 +112,8 @@ namespace Database.ClassHierarhy
     public class Teacher : Worker
     {
         public string Position { get; set; }
+        public DBInstitute Institute { get; set; }
+        public int InstituteId { get; set; }
 
         public Teacher() { }
 
@@ -119,6 +121,7 @@ namespace Database.ClassHierarhy
             : base(context.DBWorkers.First(w => w.Id == dbTeacher.Id), context)
         {
             Position = dbTeacher.Position;
+            InstituteId = dbTeacher.InstituteId;
         }
 
     }
@@ -136,6 +139,20 @@ namespace Database.ClassHierarhy
             FacultyName = dbFaculty.FacultyName;
             DeanId = dbFaculty.TeacherId;
             Den = dbFaculty.Den;
+        }
+    }
+
+    public class Institute : Faculty
+    {
+        public string InstituteName { get; set; }
+        public DBTeacher Head { get; set; }
+        public Institute() { }
+
+        public Institute(DBInstitute dbInstitute, UContext context)
+            :base(context.DBFaculties.First(f => f.Id == dbInstitute.Id))
+        {
+            InstituteName = dbInstitute.InstituteName;
+            Head = dbInstitute.Head;
         }
     }
 }

@@ -12,17 +12,19 @@ namespace UI.Forms.CreateEdit
 {
     public partial class Faculty : UI.Forms.CreateEdit.UniversityCreating
     {
-         public new Database.ClassHierarhy.Faculty Value;
-        private UniversityCentre repo;
+        public new Database.ClassHierarhy.Faculty Value;
         private bool isDean = false;
-        public Faculty(UniversityCentre repos)
+        public UniversityCentre repo { get; set; }
+
+        public Faculty()
         {
-            repo = repos;
+            
             InitializeComponent();
         }
 
-        public Faculty(Database.ClassHierarhy.Faculty person) : base(person)
+        public Faculty(Database.ClassHierarhy.Faculty person, UniversityCentre repos) : base(person)
         {
+            repo = repos;
             InitializeComponent();
 
             Value = person;
@@ -56,6 +58,7 @@ namespace UI.Forms.CreateEdit
             base.FillObject(fac);
 
             fac.FacultyName = tBFacultyName.Text;
+            fac.Den = repo.GetDBTeacherById(Value.DeanId);
         }
 
         protected override bool Verify()
@@ -66,6 +69,7 @@ namespace UI.Forms.CreateEdit
         private void ShowInfo()
         {
             tBFacultyName.Text = Value.FacultyName;
+            label1.Text = repo.GetTeacherById(Value.DeanId).Name;
         }
 
         private void tBFacultyName_TextChanged(object sender, EventArgs e)
@@ -95,7 +99,7 @@ namespace UI.Forms.CreateEdit
             if(dean.ShowDialog() == DialogResult.OK)
             {
                 Value.DeanId = dean.DEAN_ID;
-                Value.Den = repo.GetDBTeacherById(dean.DEAN_ID);
+                
                 label1.Text = repo.GetTeacherById(dean.DEAN_ID).Name;
                 isDean = true;
                 Ok.Enabled = Verify();

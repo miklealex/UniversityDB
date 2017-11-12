@@ -82,6 +82,18 @@
     <Compile Include="Forms\CreateEdit\HumanCreating.Designer.cs">
       <DependentUpon>HumanCreating.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CreateEdit\Institute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateEdit\Institute.Designer.cs">
+      <DependentUpon>Institute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateEdit\RemoveTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateEdit\RemoveTeacher.Designer.cs">
+      <DependentUpon>RemoveTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CreateEdit\StudentCreating.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +141,12 @@
     </Compile>
     <Compile Include="Forms\Read\Human.Designer.cs">
       <DependentUpon>Human.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Read\InstituteRead.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Read\InstituteRead.Designer.cs">
+      <DependentUpon>InstituteRead.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Read\Student.cs">
       <SubType>Form</SubType>
@@ -183,6 +201,12 @@
     <EmbeddedResource Include="Forms\CreateEdit\HumanCreating.resx">
       <DependentUpon>HumanCreating.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateEdit\Institute.resx">
+      <DependentUpon>Institute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateEdit\RemoveTeacher.resx">
+      <DependentUpon>RemoveTeacher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateEdit\StudentCreating.resx">
       <DependentUpon>StudentCreating.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Read\Human.resx">
       <DependentUpon>Human.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Read\InstituteRead.resx">
+      <DependentUpon>InstituteRead.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Read\Student.resx">
       <DependentUpon>Student.cs</DependentUpon>

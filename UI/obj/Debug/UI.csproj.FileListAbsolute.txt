@@ -64,3 +64,6 @@ D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.Read.ForeignStuden
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.Faculty.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.Read.FacultyRead.resources
 D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.AddDean.resources
+D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.Institute.resources
+D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.Read.InstituteRead.resources
+D:\VSprojects\UniversityDB\UniversityDB\UI\obj\Debug\UI.Forms.CreateEdit.RemoveTeacher.resources
