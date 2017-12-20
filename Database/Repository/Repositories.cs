@@ -26,6 +26,11 @@ namespace Database.Repository
             return context.DBTeachers.ToList();
         }
 
+        public List<DBInstitute> GetAllInstitutes()
+        {
+            return context.DBInstitutes.ToList();
+        }
+
         #region Universitys => context.DBUniversitys.Where(o => o.Sealed).ToList().Select(uobj => new University(uobj));
 
         private IEnumerable<University> Universitys => context.DBUniversitys
@@ -219,7 +224,7 @@ namespace Database.Repository
 
         private int CreateInstitute(Institute inst, DBClass dbClass)
         {
-            int id = CreateFaculty(inst);
+            int id = CreateUniversity(inst);
 
             DBInstitute dbInstitute = new DBInstitute
             {
@@ -453,8 +458,9 @@ namespace Database.Repository
 
             dbInstitute.InstituteName = inst.InstituteName;
             dbInstitute.Head = inst.Head;
+            dbInstitute.facultyId = inst.facultyId;
 
-            UpdateFaculty(inst);
+            UpdateUniversity(inst);
         }
 
         #endregion

@@ -7,18 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Database.Repository;
+using Database;
 using System.IO;
 
 namespace UI.Forms.CreateEdit
 {
-    public partial class RemoveTeacher : Form
+    public partial class AddInstitute : Form
     {
-        public ListView listView1;
-        public List<int> removedIndexes = new List<int>();
-        public RemoveTeacher(ListView curListView)
+        private ListView listView1;
+        private UniversityCentre repo;
+        public int  Inst_ID {get; set;}
+        public AddInstitute(UniversityCentre repos)
         {
+            repo = repos;
+            InitializeComponent();
+            // Create a new ListView control.
             listView1 = new ListView();
-            listView1.Bounds = new Rectangle(new Point(10, 10), new Size(200, 200));
+            listView1.Bounds = new Rectangle(new Point(10, 10), new Size(300, 200));
 
             // Set the view to show details.
             listView1.View = View.LargeIcon;
@@ -30,26 +36,32 @@ namespace UI.Forms.CreateEdit
             listView1.FullRowSelect = true;
             // Display grid lines.
             listView1.GridLines = true;
+
+            listView1.Scrollable = true;
+            foreach(DBInstitute obj in repo.GetAllInstitutes())
+            {
+                listView1.Items.Add(obj.Id + " " + repo.GetInstituteById(obj.Id).InstituteName);
+            }
+
+            // Create two ImageList objects.
+            ImageList imageListSmall = new ImageList();
             ImageList imageListLarge = new ImageList();
+
             imageListLarge.Images.Add(Bitmap.FromFile(Path.GetFullPath("..\\..\\..\\images\\File.bmp")));
 
             //Assign the ImageList objects to the ListView.
             listView1.LargeImageList = imageListLarge;
-            listView1.Scrollable = true;
-            foreach (ListViewItem obj in curListView.Items)
-            {
-                listView1.Items.Add(obj.Text);
-            }
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView_SelIndexChanged);
+            listView1.ItemSelectionChanged += label1_Click;
+
+            // Add the ListView to the control collection.
             this.Controls.Add(listView1);
-            InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            removedIndexes.Add(listView1.SelectedIndices[0] + removedIndexes.Count);
-            listView1.Items.Remove(listView1.SelectedItems[0]);
+            Inst_ID = int.Parse(listView1.SelectedItems[0].Text.Split(' ')[0]);
+            this.DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -57,9 +69,9 @@ namespace UI.Forms.CreateEdit
             Close();
         }
 
-        private void listView_SelIndexChanged(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count == 1)
+            if(listView1.SelectedItems.Count == 1)
             {
                 button1.Enabled = true;
             }
@@ -67,12 +79,6 @@ namespace UI.Forms.CreateEdit
             {
                 button1.Enabled = false;
             }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
-            Close();
         }
     }
 }

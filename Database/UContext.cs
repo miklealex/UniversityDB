@@ -46,7 +46,7 @@ namespace Database
             repo.CreateClass(typeof(Worker), typeof(Person));
             repo.CreateClass(typeof(Teacher), typeof(Worker));
             repo.CreateClass(typeof(Faculty), typeof(University));
-            repo.CreateClass(typeof(Institute), typeof(Faculty));
+            repo.CreateClass(typeof(Institute), typeof(University));
         }
     }
 }

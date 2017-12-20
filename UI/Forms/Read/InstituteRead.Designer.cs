@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.SuspendLayout();
@@ -76,20 +77,32 @@
             this.linkLabel2.Text = "linkLabel2";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(338, 137);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Teachers";
+            // 
             // InstituteRead
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(519, 474);
+            this.ClientSize = new System.Drawing.Size(519, 360);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox8);
             this.Name = "InstituteRead";
             this.Controls.SetChildIndex(this.groupBox8, 0);
             this.Controls.SetChildIndex(this.groupBox9, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -99,5 +112,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.Label label2;
     }
 }

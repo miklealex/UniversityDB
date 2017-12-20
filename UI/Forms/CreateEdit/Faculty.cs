@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Database.ClassHierarhy;
 using Database.Repository;
+using System.IO;
 
 namespace UI.Forms.CreateEdit
 {
@@ -15,11 +16,38 @@ namespace UI.Forms.CreateEdit
         public new Database.ClassHierarhy.Faculty Value;
         private bool isDean = false;
         public UniversityCentre repo { get; set; }
+        public ListView listView1;
 
-        public Faculty()
+        public Faculty(UniversityCentre _repo)
         {
-            
+            repo = _repo;
             InitializeComponent();
+            listView1 = new ListView();
+            listView1.Bounds = new Rectangle(new Point(320, 20), new Size(150, 150));
+
+            // Set the view to show details.
+            listView1.View = View.LargeIcon;
+            // Allow the user to edit item text.
+            listView1.LabelEdit = true;
+            // Allow the user to rearrange columns.
+            listView1.AllowColumnReorder = true;
+            // Select the item and subitems when selection is made.
+            listView1.FullRowSelect = true;
+            // Display grid lines.
+            listView1.GridLines = true;
+
+            listView1.Scrollable = true;
+       
+
+            // Create two ImageList objects.
+            ImageList imageListSmall = new ImageList();
+            ImageList imageListLarge = new ImageList();
+
+            imageListLarge.Images.Add(Bitmap.FromFile(Path.GetFullPath("..\\..\\..\\images\\File.bmp")));
+
+            //Assign the ImageList objects to the ListView.
+            listView1.LargeImageList = imageListLarge;
+            this.Controls.Add(listView1);
         }
 
         public Faculty(Database.ClassHierarhy.Faculty person, UniversityCentre repos) : base(person)
@@ -63,7 +91,7 @@ namespace UI.Forms.CreateEdit
 
         protected override bool Verify()
         {
-            return  tBFacultyName != null && tBFacultyName.Text.Length > 0  && isDean && base.Verify();
+            return  tBFacultyName != null && tBFacultyName.Text.Length > 0  && isDean && listView1.Items.Count > 0 && base.Verify();
         }
 
         private void ShowInfo()
@@ -127,6 +155,41 @@ namespace UI.Forms.CreateEdit
         private void label1_Click(object sender, EventArgs e)
         {
             ShowDean(Value.DeanId);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddInstitute diag = new AddInstitute(repo);
+            if(diag.ShowDialog() == DialogResult.OK)
+            {
+                Database.ClassHierarhy.Institute inst = repo.GetInstituteById(diag.Inst_ID);
+                if (listView1.FindItemWithText(inst.Id + " " + inst.InstituteName) == null)
+                {
+                    listView1.Items.Add(inst.Id + " " + inst.InstituteName);
+                    inst.facultyId = Value.Id;
+                    repo.UpdateInstitute(inst);
+                }
+            }
+            Ok.Enabled = Verify();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            RemoveTeacher diag = new RemoveTeacher(listView1);
+            if(diag.ShowDialog() == DialogResult.OK)
+            {
+                int removed = 0;
+                foreach (int index in diag.removedIndexes)
+                {
+                    Database.ClassHierarhy.Institute remInst = repo.GetInstituteById(int.Parse(listView1.Items[index - removed].Text.Split(' ')[0]));
+                    remInst.facultyId = -1;
+                    repo.UpdateInstitute(remInst);
+                    listView1.Items.RemoveAt(index - removed);
+                    removed++;
+                }
+                listView1.Update();
+                Ok.Enabled = Verify();
+            }
         }
     }
 }

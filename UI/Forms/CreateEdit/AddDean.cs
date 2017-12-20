@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Database.Repository;
 using Database;
+using System.IO;
 
 namespace UI.Forms.CreateEdit
 {
@@ -46,7 +47,7 @@ namespace UI.Forms.CreateEdit
             ImageList imageListSmall = new ImageList();
             ImageList imageListLarge = new ImageList();
 
-            imageListLarge.Images.Add(Bitmap.FromFile("D:\\VSprojects\\UniversityDB\\UniversityDB\\images\\File.bmp"));
+            imageListLarge.Images.Add(Bitmap.FromFile(Path.GetFullPath("..\\..\\..\\images\\File.bmp")));
 
             //Assign the ImageList objects to the ListView.
             listView1.LargeImageList = imageListLarge;

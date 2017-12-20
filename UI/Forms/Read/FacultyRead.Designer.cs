@@ -79,7 +79,7 @@
             // FacultyRead
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(303, 474);
+            this.ClientSize = new System.Drawing.Size(432, 474);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
             this.Name = "FacultyRead";

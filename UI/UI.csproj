@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\CreateEdit\AddInstitute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateEdit\AddInstitute.Designer.cs">
+      <DependentUpon>AddInstitute.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CreateEdit\AddDean.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     <Compile Include="СhooseEntity.Designer.cs">
       <DependentUpon>СhooseEntity.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\CreateEdit\AddInstitute.resx">
+      <DependentUpon>AddInstitute.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateEdit\AddDean.resx">
       <DependentUpon>AddDean.cs</DependentUpon>
     </EmbeddedResource>

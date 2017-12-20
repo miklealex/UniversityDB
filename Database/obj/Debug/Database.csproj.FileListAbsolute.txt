@@ -19,3 +19,14 @@ D:\VSprojects\UniversityDB\UniversityDB\Database\obj\Debug\Database.csproj.CoreC
 D:\VSprojects\UniversityDB\UniversityDB\Database\obj\Debug\Database.dll
 D:\VSprojects\UniversityDB\UniversityDB\Database\obj\Debug\Database.pdb
 D:\VSprojects\UniversityDB\UniversityDB\Database\obj\Debug\Database.csprojResolveAssemblyReference.cache
+E:\UDB\UniversityDB\Database\bin\Debug\Database.dll.config
+E:\UDB\UniversityDB\Database\bin\Debug\Database.dll
+E:\UDB\UniversityDB\Database\bin\Debug\Database.pdb
+E:\UDB\UniversityDB\Database\bin\Debug\EntityFramework.dll
+E:\UDB\UniversityDB\Database\bin\Debug\EntityFramework.SqlServer.dll
+E:\UDB\UniversityDB\Database\bin\Debug\EntityFramework.xml
+E:\UDB\UniversityDB\Database\bin\Debug\EntityFramework.SqlServer.xml
+E:\UDB\UniversityDB\Database\obj\Debug\Database.csprojResolveAssemblyReference.cache
+E:\UDB\UniversityDB\Database\obj\Debug\Database.csproj.CoreCompileInputs.cache
+E:\UDB\UniversityDB\Database\obj\Debug\Database.dll
+E:\UDB\UniversityDB\Database\obj\Debug\Database.pdb

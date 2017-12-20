@@ -142,17 +142,19 @@ namespace Database.ClassHierarhy
         }
     }
 
-    public class Institute : Faculty
+    public class Institute : University
     {
         public string InstituteName { get; set; }
         public DBTeacher Head { get; set; }
         public Institute() { }
+        public int facultyId { get; set; }
 
         public Institute(DBInstitute dbInstitute, UContext context)
-            :base(context.DBFaculties.First(f => f.Id == dbInstitute.Id))
+            :base(dbInstitute.DBUniversity)
         {
             InstituteName = dbInstitute.InstituteName;
             Head = dbInstitute.Head;
+            facultyId = dbInstitute.facultyId;
         }
     }
 }

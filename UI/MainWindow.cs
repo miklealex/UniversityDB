@@ -217,12 +217,18 @@ namespace UI
                     }
                     break;
                 case "Faculty":
-                    UI.Forms.CreateEdit.Faculty facult = new Forms.CreateEdit.Faculty();
+                    UI.Forms.CreateEdit.Faculty facult = new Forms.CreateEdit.Faculty(repo);
                     facult.repo = repo;
                     if(facult.ShowDialog() == DialogResult.OK)
                     {
                         facult.Value.ParentId = ParentId;
                         repo.CreateFaculty(facult.Value);
+                        foreach (ListViewItem obj in facult.listView1.Items)
+                        {
+                            Database.ClassHierarhy.Institute currentTeacher = repo.GetInstituteById(int.Parse(obj.Text.Split(' ')[0]));
+                            currentTeacher.facultyId = facult.Value.Id;
+                            repo.UpdateInstitute(currentTeacher);
+                        }
                         id = facult.Value.Id;
                         title = facult.Value.Title;
                     }

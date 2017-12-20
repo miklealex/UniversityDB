@@ -7,14 +7,16 @@ using System.Text;
 using System.Windows.Forms;
 using Database.ClassHierarhy;
 using Database.Repository;
+using System.IO;
 
 namespace UI.Forms.CreateEdit
 {
-    public partial class Institute : UI.Forms.CreateEdit.Faculty
+    public partial class Institute : UI.Forms.CreateEdit.UniversityCreating
     {
         public new Database.ClassHierarhy.Institute Value;
         private bool isHead = false;
         public ListView listView1;
+        public UniversityCentre repo;
         public Institute(UniversityCentre repos)
         {
             repo = repos;
@@ -22,7 +24,7 @@ namespace UI.Forms.CreateEdit
             InitializeComponent();
             // Create a new ListView control.
             listView1 = new ListView();
-            listView1.Bounds = new Rectangle(new Point(310, 10), new Size(200, 200));
+            listView1.Bounds = new Rectangle(new Point(310, 30), new Size(200, 180));
 
             // Set the view to show details.
             listView1.View = View.LargeIcon;
@@ -48,8 +50,7 @@ namespace UI.Forms.CreateEdit
                 ImageList imageListSmall = new ImageList();
                 ImageList imageListLarge = new ImageList();
 
-                imageListLarge.Images.Add(Bitmap.FromFile("D:\\VSprojects\\UniversityDB\\UniversityDB\\images\\File.bmp"));
-
+                imageListLarge.Images.Add(Bitmap.FromFile(Path.GetFullPath("..\\..\\..\\images\\File.bmp")));
                 //Assign the ImageList objects to the ListView.
                 listView1.LargeImageList = imageListLarge;
 
@@ -60,7 +61,7 @@ namespace UI.Forms.CreateEdit
             }
         }
 
-        public Institute(Database.ClassHierarhy.Institute inst, UniversityCentre repos) : base(inst, repos)
+        public Institute(Database.ClassHierarhy.Institute inst, UniversityCentre repos) : base(inst)
         {
             repo = repos;
             listView1 = new ListView();
@@ -90,7 +91,7 @@ namespace UI.Forms.CreateEdit
                 ImageList imageListSmall = new ImageList();
                 ImageList imageListLarge = new ImageList();
 
-                imageListLarge.Images.Add(Bitmap.FromFile("D:\\VSprojects\\UniversityDB\\UniversityDB\\images\\File.bmp"));
+                imageListLarge.Images.Add(Bitmap.FromFile(Path.GetFullPath("..\\..\\..\\images\\File.bmp")));
 
                 //Assign the ImageList objects to the ListView.
                 listView1.LargeImageList = imageListLarge;

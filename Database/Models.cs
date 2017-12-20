@@ -81,7 +81,7 @@ namespace Database
         public virtual DBUniversity DBUniversity { get; set; }
 
         public string InstituteName { get; set; }
-
+        public int facultyId { get; set; }
         [ForeignKey("Head")]
         public int HeadId { get; set; }
         public DBTeacher Head { get; set; }

@@ -7,10 +7,11 @@ using System.Text;
 using System.Windows.Forms;
 using Database.ClassHierarhy;
 using Database;
+using System.IO;
 
 namespace UI.Forms.Read
 {
-    public partial class InstituteRead : UI.Forms.Read.FacultyRead
+    public partial class InstituteRead : UI.Forms.Read.University
     {
         private Database.ClassHierarhy.Institute institute;
         public ListView listView1;
@@ -23,7 +24,7 @@ namespace UI.Forms.Read
         {
             InitializeComponent();
             listView1 = new ListView();
-            listView1.Bounds = new Rectangle(new Point(200, 200), new Size(300, 200));
+            listView1.Bounds = new Rectangle(new Point(250, 160), new Size(200, 180));
 
             // Set the view to show details.
             listView1.View = View.LargeIcon;
@@ -48,7 +49,7 @@ namespace UI.Forms.Read
             ImageList imageListSmall = new ImageList();
             ImageList imageListLarge = new ImageList();
 
-            imageListLarge.Images.Add(Bitmap.FromFile("D:\\VSprojects\\UniversityDB\\UniversityDB\\images\\File.bmp"));
+            imageListLarge.Images.Add(Bitmap.FromFile(Path.GetFullPath("..\\..\\..\\images\\File.bmp")));
 
             //Assign the ImageList objects to the ListView.
             listView1.LargeImageList = imageListLarge;
